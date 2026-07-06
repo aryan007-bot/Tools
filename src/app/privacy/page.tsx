@@ -1,0 +1,11 @@
+import type { Metadata } from "next";
+import { PrivacyContent } from "./privacy-content";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy — ProfitAgentz",
+  description: "Read our privacy policy to understand how we collect, use, and protect your information at ProfitAgentz.",
+};
+
+export default function PrivacyPage() {
+  return <PrivacyContent />;
+}
