@@ -224,7 +224,7 @@ export function AboutContent() {
                 <h4 className="font-outfit bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-xl font-extrabold tracking-tight text-transparent">
                   {currentMember.name}
                 </h4>
-                <p className="min-h-[120px] sm:min-h-[100px] text-sm font-normal leading-relaxed text-zinc-650 sm:text-base font-sans font-light">
+                <p className="min-h-[120px] sm:min-h-[100px] text-sm leading-relaxed text-zinc-650 sm:text-base font-sans font-light">
                   {currentMember.description}
                 </p>
               </div>
@@ -396,7 +396,7 @@ export function AboutContent() {
 
           <div 
             id="contact-form" 
-            className="relative flex w-full flex-col items-stretch justify-between gap-12 overflow-hidden rounded-[32px] border border-zinc-900 bg-zinc-950 p-8 text-white shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:p-12 md:p-16 lg:flex-row scroll-mt-24 w-full"
+            className="relative flex w-full flex-col items-stretch justify-between gap-12 overflow-hidden rounded-[32px] border border-zinc-900 bg-zinc-950 p-8 text-white shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:p-12 md:p-16 lg:flex-row scroll-mt-24"
           >
             <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-purple-600/15 blur-[120px]" />
             <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-indigo-600/10 blur-[100px]" />
