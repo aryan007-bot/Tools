@@ -5,10 +5,17 @@ import { ArrowUpRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="bg-black pt-32 pb-0 w-full relative border-t border-gray-900/50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 grid md:grid-cols-2 gap-16 lg:gap-24">
-        {/* Left Side */}
-        <div className="flex flex-col justify-center">
+    <section className="bg-[#f0f0f0] w-full relative pt-16 flex flex-col items-center overflow-hidden">
+      {/* Faint Background Text */}
+      <div className="w-full flex justify-center translate-y-12 md:translate-y-24">
+        <h2 className="text-[6rem] md:text-[10rem] lg:text-[14rem] font-black text-black/5 leading-none select-none tracking-tighter whitespace-nowrap">
+          Let's Connect
+        </h2>
+      </div>
+
+      {/* Black Container */}
+      <div className="bg-black rounded-t-[2.5rem] md:rounded-t-[4rem] w-full relative z-10 pt-24 md:pt-32 pb-0 flex flex-col border-none">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 grid md:grid-cols-2 gap-16 lg:gap-24 w-full">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
             Ready to build<br />
             something<br />
@@ -95,6 +102,7 @@ export function CTA() {
             ))}
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );
