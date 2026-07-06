@@ -27,6 +27,7 @@ export interface PricingTier {
   price: { monthly: number; yearly: number };
   description: string;
   features: string[];
+  excludedFeatures?: string[];
   popular: boolean;
   cta: string;
 }

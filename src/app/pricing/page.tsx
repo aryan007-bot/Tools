@@ -40,6 +40,32 @@ export default function PricingPage() {
         // For now, we'll just show the unique ones by name if there are duplicates across tools
         const uniqueTiers = Array.from(new Map(mappedTiers.map(t => [t.name, t])).values());
         
+        // Mock excluded features based on Supahub design
+        const ADVANCED_FEATURES = [
+          "Changelog & Feedback Widgets",
+          "Email Customization",
+          "All Integrations",
+          "No Integrations",
+          "Value/Effort Prioritization Module",
+          "Custom Domain",
+          "Post Moderation",
+          "Single Sign-On (SSO)",
+          "User Segmentation",
+          "API & Webhooks"
+        ];
+        
+        uniqueTiers.forEach(tier => {
+          // Add "No Integrations" to excluded if it's the Free tier and it doesn't have it
+          const tierSpecificAdvanced = [...ADVANCED_FEATURES];
+          if (tier.name.toLowerCase().includes("free")) {
+            tierSpecificAdvanced.push("No Integrations");
+          }
+          
+          tier.excludedFeatures = tierSpecificAdvanced.filter(f => !tier.features.includes(f));
+          // Deduplicate
+          tier.excludedFeatures = Array.from(new Set(tier.excludedFeatures));
+        });
+
         setPricingTiers(uniqueTiers);
       } catch (err) {
         console.error("Failed to fetch plans", err);

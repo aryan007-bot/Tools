@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { PricingTier } from "@/types";
 import { cn } from "@/lib/utils";
-import { Check, Flame, Sparkle, Sparkles, Hexagon } from "lucide-react";
+import { Check, Flame, Sparkle, Sparkles, Hexagon, Ghost } from "lucide-react";
 
 interface PricingCardProps {
   tier: PricingTier;
@@ -72,6 +72,16 @@ export function PricingCard({ tier, yearly = false }: PricingCardProps) {
               <Check className="w-4 h-4 text-emerald-500" />
             </div>
             <span className={tier.popular ? "text-gray-200" : "text-gray-700"}>
+              {feature}
+            </span>
+          </li>
+        ))}
+        {tier.excludedFeatures?.map((feature) => (
+          <li key={feature} className="flex items-start gap-3 text-sm font-medium opacity-50">
+            <div className="mt-0.5 p-0.5">
+              <Ghost className="w-4 h-4 text-gray-400" />
+            </div>
+            <span className={tier.popular ? "text-gray-400" : "text-gray-500"}>
               {feature}
             </span>
           </li>
