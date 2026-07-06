@@ -109,7 +109,7 @@ export function Ecosystem() {
                         {tool.features.slice(0, 3).map((f) => (
                           <span
                             key={f}
-                            className="text-xs px-3 py-1.5 rounded-lg bg-gray-100/80 text-gray-600 font-medium"
+                            className="text-xs px-3 py-1.5 rounded-lg bg-gray-100/85 text-gray-600 font-medium"
                           >
                             {f}
                           </span>
