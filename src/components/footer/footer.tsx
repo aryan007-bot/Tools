@@ -11,10 +11,10 @@ export function Footer() {
   return (
     <footer className="bg-black text-gray-300 font-sans w-full flex flex-col pt-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        
+
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16">
-          
+
           {/* Company Info - spans 2 cols on lg */}
           <div className="lg:col-span-2 flex flex-col items-start pr-8">
             <div className="flex items-center gap-3 mb-1">
@@ -123,10 +123,10 @@ export function Footer() {
 
       {/* Huge Background Text */}
       <div className="w-full flex justify-center mt-0 select-none overflow-hidden">
-        <span 
+        <span
           className="font-black tracking-tighter uppercase whitespace-nowrap"
-          style={{ 
-            fontSize: 'clamp(5rem, 19vw, 30rem)',
+          style={{
+            fontSize: 'clamp(5rem, 10vw, 15rem)',
             lineHeight: '0.75',
             color: '#1a0b2e',
             marginBottom: '-3%',

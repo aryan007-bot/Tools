@@ -7,14 +7,14 @@ export function CTA() {
   return (
     <section className="bg-[#f0f0f0] w-full relative pt-16 flex flex-col items-center overflow-hidden">
       {/* Faint Background Text */}
-      <div className="w-full flex justify-center translate-y-10 md:translate-y-16 lg:translate-y-24 px-4">
+      {/* <div className="w-full flex justify-center translate-y-10 md:translate-y-16 lg:translate-y-24 px-4">
         <h2 
           className="font-black text-black/5 leading-none select-none tracking-tighter whitespace-nowrap"
-          style={{ fontSize: 'clamp(4rem, 11vw, 12rem)' }}
+          style={{ fontSize: 'clamp(12rem, 11vw, 12rem)' }}
         >
           Let&apos;s Connect
         </h2>
-      </div>
+      </div> */}
 
       {/* Black Container */}
       <div className="bg-black rounded-t-[2.5rem] md:rounded-t-[4rem] w-full relative z-10 pt-24 md:pt-32 pb-0 flex flex-col border-none">
