@@ -99,13 +99,13 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center gap-3 md:gap-4 text-[10px] text-gray-400 uppercase tracking-widest font-mono font-medium">
             <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/terms-and-condition" className="hover:text-white transition-colors">Terms of Service</Link>
             <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="#" className="hover:text-white transition-colors">AI Ethics</Link>
+            <Link href="/ai-ethics" className="hover:text-white transition-colors">AI Ethics</Link>
           </div>
         </div>
 
