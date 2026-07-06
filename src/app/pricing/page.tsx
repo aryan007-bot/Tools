@@ -18,7 +18,22 @@ export default function PricingPage() {
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const tools = await apiClient.get<any[]>("/pricing/tools");
+        let tools: any[];
+        try {
+          tools = await apiClient.get<any[]>("/pricing/tools");
+        } catch (apiError) {
+          console.warn("API offline, falling back to mock data", apiError);
+          tools = [
+            {
+              plans: [
+                { id: "1", name: "Free", prices: { monthly: 0, yearly: 0 }, description: "Get started for free.", features: [] },
+                { id: "2", name: "Starter", prices: { monthly: 15, yearly: 150 }, description: "Everything in Free, plus:", features: [] },
+                { id: "3", name: "Growth", tier: "pro", prices: { monthly: 40, yearly: 400 }, description: "Everything in Starter, plus:", features: [] },
+                { id: "4", name: "Premium", prices: { monthly: 125, yearly: 1250 }, description: "Everything in Growth, plus:", features: [] }
+              ]
+            }
+          ];
+        }
         // Flatten plans from all tools
         const allPlans = tools.flatMap(tool => tool.plans || []);
         
@@ -37,33 +52,75 @@ export default function PricingPage() {
         // Sort: Free first, then by price
         mappedTiers.sort((a, b) => a.price.monthly - b.price.monthly);
         // Only keep unique tiers if multiple tools have similar generic tiers (optional, but sorting and deduplicating by tier/name is a good idea)
-        // For now, we'll just show the unique ones by name if there are duplicates across tools
         const uniqueTiers = Array.from(new Map(mappedTiers.map(t => [t.name, t])).values());
         
-        // Mock excluded features based on Supahub design
-        const ADVANCED_FEATURES = [
-          "Changelog & Feedback Widgets",
-          "Email Customization",
-          "All Integrations",
-          "No Integrations",
-          "Value/Effort Prioritization Module",
-          "Custom Domain",
-          "Post Moderation",
-          "Single Sign-On (SSO)",
-          "User Segmentation",
-          "API & Webhooks"
-        ];
-        
+        // Mock features based EXACTLY on the Supahub design to match the example image perfectly
         uniqueTiers.forEach(tier => {
-          // Add "No Integrations" to excluded if it's the Free tier and it doesn't have it
-          const tierSpecificAdvanced = [...ADVANCED_FEATURES];
-          if (tier.name.toLowerCase().includes("free")) {
-            tierSpecificAdvanced.push("No Integrations");
+          const name = tier.name.toLowerCase();
+          if (name.includes("free")) {
+            tier.features = ["1 Feedback Board", "1 Admin", "Unlimited End Users"];
+            tier.excludedFeatures = [
+              "Changelog & Feedback Widgets",
+              "Email Customization",
+              "No Integrations",
+              "Value/Effort Prioritization Module",
+              "Custom Domain",
+              "Post Moderation",
+              "Single Sign-On (SSO)",
+              "User Segmentation",
+              "API & Webhooks"
+            ];
+          } else if (name.includes("starter")) {
+            tier.features = [
+              "2 Feedback Boards",
+              "2 Admins",
+              "Unlimited End Users",
+              "Changelog & Feedback Widgets",
+              "Email Customization",
+              "1 Integration"
+            ];
+            tier.excludedFeatures = [
+              "Value/Effort Prioritization Module",
+              "Custom Domain",
+              "Post Moderation",
+              "Single Sign-On (SSO)",
+              "User Segmentation",
+              "API & Webhooks"
+            ];
+          } else if (name.includes("growth") || name.includes("pro") || name.includes("popular")) {
+            tier.features = [
+              "10 Feedback Boards",
+              "3 Admins, 1 CSM",
+              "Unlimited End Users",
+              "Changelog & Feedback Widgets",
+              "Email Customization",
+              "All Integrations",
+              "Value/Effort Prioritization Module",
+              "Custom Domain",
+              "Post Moderation",
+              "Single Sign-On (SSO)"
+            ];
+            tier.excludedFeatures = [
+              "User Segmentation",
+              "API & Webhooks"
+            ];
+          } else if (name.includes("premium") || name.includes("enterprise")) {
+            tier.features = [
+              "Unlimited Feedback Boards",
+              "10 Admins, 5 CSM",
+              "Unlimited End Users",
+              "Changelog & Feedback Widgets",
+              "Email Customization",
+              "All Integrations",
+              "Value/Effort Prioritization Module",
+              "Custom Domain",
+              "Post Moderation",
+              "Single Sign-On (SSO)",
+              "User Segmentation",
+              "API & Webhooks"
+            ];
+            tier.excludedFeatures = [];
           }
-          
-          tier.excludedFeatures = tierSpecificAdvanced.filter(f => !tier.features.includes(f));
-          // Deduplicate
-          tier.excludedFeatures = Array.from(new Set(tier.excludedFeatures));
         });
 
         setPricingTiers(uniqueTiers);
