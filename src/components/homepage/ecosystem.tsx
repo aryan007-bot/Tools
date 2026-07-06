@@ -184,14 +184,14 @@ export function Ecosystem() {
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 max-w-7xl mx-auto px-6 pointer-events-none flex justify-between z-20">
           <button
             onClick={handlePrev}
-            className="w-12 h-12 rounded-full border border-gray-200 bg-white/95 backdrop-blur-md flex items-center justify-center text-gray-600 hover:bg-white hover:border-gray-300 hover:shadow-lg active:scale-95 transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-auto hidden md:flex"
+            className="w-12 h-12 rounded-full border border-gray-200 bg-white/95 backdrop-blur-md items-center justify-center text-gray-600 hover:bg-white hover:border-gray-300 hover:shadow-lg active:scale-95 transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-auto hidden md:flex"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={handleNext}
-            className="w-12 h-12 rounded-full border border-gray-200 bg-white/95 backdrop-blur-md flex items-center justify-center text-gray-600 hover:bg-white hover:border-gray-300 hover:shadow-lg active:scale-95 transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-auto hidden md:flex"
+            className="w-12 h-12 rounded-full border border-gray-200 bg-white/95 backdrop-blur-md items-center justify-center text-gray-600 hover:bg-white hover:border-gray-300 hover:shadow-lg active:scale-95 transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-auto hidden md:flex"
             aria-label="Next slide"
           >
             <ChevronRight className="w-5 h-5" />
