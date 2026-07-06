@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
@@ -18,11 +19,15 @@ export function Footer() {
           {/* Company Info - spans 2 cols on lg */}
           <div className="lg:col-span-2 flex flex-col items-start pr-8">
             <div className="flex items-center gap-3 mb-1">
-              {/* Logo Placeholder */}
-              <div className="w-10 h-10 bg-white rounded flex items-center justify-center overflow-hidden">
-                <div className="w-full h-full bg-[#3b0764] flex items-center justify-center">
-                  <div className="w-5 h-3 bg-white/90 rounded-sm shadow-sm" />
-                </div>
+              {/* Logo */}
+              <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+                <Image 
+                  src="/Untitled_design-removebg-preview.png" 
+                  alt="Profit Agentz Logo" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain"
+                />
               </div>
               <span className="font-extrabold text-2xl text-white tracking-tight">
                 Profit Agentz<sup className="text-xs text-[#a855f7] -top-3">™</sup>

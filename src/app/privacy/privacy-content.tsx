@@ -469,9 +469,9 @@ export function PrivacyContent() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {[
-                  { label: "Cookie Policy", href: "#" },
-                  { label: "AI Ethics Policy", href: "#" },
-                  { label: "Terms of Service", href: "/about" }
+                  { label: "Cookie Policy", href: "/cookie-policy" },
+                  { label: "AI Ethics Policy", href: "/ai-ethics" },
+                  { label: "Terms of Service", href: "/terms-and-condition" }
                 ].map((doc) => (
                   <Link 
                     key={doc.label} 
