@@ -126,7 +126,7 @@ export function Footer() {
         <span
           className="font-black tracking-tighter uppercase whitespace-nowrap"
           style={{
-            fontSize: 'clamp(5rem, 10vw, 15rem)',
+            fontSize: 'clamp(3rem, 14vw, 15rem)',
             lineHeight: '0.75',
             color: '#1a0b2e',
             marginBottom: '-3%',

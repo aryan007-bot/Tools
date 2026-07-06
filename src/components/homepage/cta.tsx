@@ -7,18 +7,18 @@ export function CTA() {
   return (
     <section className="bg-[#f0f0f0] w-full relative pt-16 flex flex-col items-center overflow-hidden">
       {/* Faint Background Text */}
-      {/* <div className="w-full flex justify-center translate-y-10 md:translate-y-16 lg:translate-y-24 px-4">
+      <div className="w-full flex justify-center translate-y-8 md:translate-y-16 lg:translate-y-24 px-4">
         <h2 
           className="font-black text-black/5 leading-none select-none tracking-tighter whitespace-nowrap"
-          style={{ fontSize: 'clamp(12rem, 11vw, 12rem)' }}
+          style={{ fontSize: 'clamp(3rem, 12vw, 12rem)' }}
         >
           Let&apos;s Connect
         </h2>
-      </div> */}
+      </div>
 
       {/* Black Container */}
-      <div className="bg-black rounded-t-[2.5rem] md:rounded-t-[4rem] w-full relative z-10 pt-24 md:pt-32 pb-0 flex flex-col border-none">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 grid md:grid-cols-2 gap-16 lg:gap-24 w-full">
+      <div className="bg-black rounded-t-[2.5rem] md:rounded-t-[4rem] w-full relative z-10 pt-16 md:pt-24 lg:pt-32 pb-0 flex flex-col border-none">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 md:pb-32 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 w-full">
           {/* Left Side */}
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
@@ -32,7 +32,7 @@ export function CTA() {
           </div>
 
         {/* Right Side - Form */}
-        <div className="flex flex-col justify-center w-full max-w-lg ml-auto">
+        <div className="flex flex-col justify-center w-full max-w-lg mx-auto md:ml-auto">
           <form className="flex flex-col gap-10">
             {/* Name Field */}
             <div className="flex flex-col gap-3">
