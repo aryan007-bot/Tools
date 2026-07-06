@@ -2,8 +2,6 @@ import { Hero } from "@/components/homepage/hero";
 import { Ecosystem } from "@/components/homepage/ecosystem";
 import { Workflow } from "@/components/homepage/workflow";
 import { Testimonials } from "@/components/homepage/testimonials";
-
-import { HomePageFaq } from "@/components/homepage/faq";
 import { CTA } from "@/components/homepage/cta";
 
 export default function Home() {
@@ -13,8 +11,6 @@ export default function Home() {
       <Ecosystem />
       <Workflow />
       <Testimonials />
-
-      <HomePageFaq />
       <CTA />
     </>
   );
