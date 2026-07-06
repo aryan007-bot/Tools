@@ -9,22 +9,24 @@ export function CTA() {
       {/* Faint Background Text */}
       <div className="w-full flex justify-center translate-y-12 md:translate-y-24">
         <h2 className="text-[6rem] md:text-[10rem] lg:text-[14rem] font-black text-black/5 leading-none select-none tracking-tighter whitespace-nowrap">
-          Let's Connect
+          Let&apos;s Connect
         </h2>
       </div>
 
       {/* Black Container */}
       <div className="bg-black rounded-t-[2.5rem] md:rounded-t-[4rem] w-full relative z-10 pt-24 md:pt-32 pb-0 flex flex-col border-none">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 grid md:grid-cols-2 gap-16 lg:gap-24 w-full">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
-            Ready to build<br />
-            something<br />
-            that pays?
-          </h2>
-          <p className="text-[#a1a1aa] text-sm md:text-base font-medium">
-            Tell us about your software requirements.
-          </p>
-        </div>
+          {/* Left Side */}
+          <div className="flex flex-col justify-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+              Ready to build<br />
+              something<br />
+              that pays?
+            </h2>
+            <p className="text-[#a1a1aa] text-sm md:text-base font-medium">
+              Tell us about your software requirements.
+            </p>
+          </div>
 
         {/* Right Side - Form */}
         <div className="flex flex-col justify-center w-full max-w-lg ml-auto">
