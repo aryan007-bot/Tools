@@ -13,7 +13,7 @@ export default function AIEthicsPage() {
         <h3 className="text-xl font-bold text-zinc-900 font-outfit border-b border-zinc-200 pb-3">1. Transparency & Explainability</h3>
         <ul className="list-disc pl-5 space-y-1">
           <li>We clearly disclose when users are interacting with AI agents rather than human operators.</li>
-          <li>We strive to make our AI systems' decision-making processes understandable and interpretable.</li>
+          <li>We strive to make our AI systems&apos; decision-making processes understandable and interpretable.</li>
           <li>We provide documentation on system capabilities, limitations, and intended use cases.</li>
           <li>We avoid &quot;black box&quot; implementations where human oversight is impossible.</li>
         </ul>

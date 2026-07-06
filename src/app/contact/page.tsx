@@ -58,7 +58,7 @@ export default function ContactPage() {
         {/* Large back heading */}
         <div className="relative text-center overflow-hidden select-none mb-[-15px] sm:mb-[-30px] pointer-events-none">
           <h2 className="font-black leading-none tracking-tighter uppercase text-[rgba(0,0,0,0.06)] whitespace-nowrap text-[4.5rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem]">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
         </div>
 
