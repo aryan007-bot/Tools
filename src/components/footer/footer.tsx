@@ -1,145 +1,105 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="bg-black text-gray-300 font-sans w-full flex flex-col pt-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16">
-
-          {/* Company Info - spans 2 cols on lg */}
-          <div className="lg:col-span-2 flex flex-col items-start pr-8">
-            <div className="flex items-center gap-3 mb-1">
-              {/* Logo */}
-              <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
-                <Image 
-                  src="/Untitled_design-removebg-preview.png" 
-                  alt="Profit Agentz Logo" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-extrabold text-2xl text-white tracking-tight">
-                Profit Agentz<sup className="text-xs text-[#a855f7] -top-3">™</sup>
-              </span>
-            </div>
-            <p className="text-[11px] text-gray-500 tracking-wide mb-6 font-medium">
-              by AscendX Innovations Pvt. Ltd.
-            </p>
-            <p className="text-[#a1a1aa] text-sm leading-relaxed max-w-[340px]">
+    <footer className="bg-[#1C1C1E] text-white font-sans w-full flex flex-col pt-16 relative overflow-hidden" style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+      `,
+      backgroundSize: '40px 40px',
+      backgroundPosition: 'center top'
+    }}>
+      
+      <div className="max-w-[1200px] mx-auto px-6 w-full z-10 relative mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-12">
+          
+          {/* Brand Info */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="font-display font-bold text-2xl tracking-tight flex items-center gap-2">
+               <img src="/Untitled_design-removebg-preview.png" alt="ToolStack Logo" className="w-8 h-8 object-contain" />
+               ToolStack™
+            </Link>
+            <p className="text-gray-400 text-sm">by AscendX Innovations Pvt. Ltd.</p>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mt-2">
               Revenue-first AI agency. We build custom AI systems, autonomous agents, and intelligent software that drive measurable business results.
             </p>
+            <div className="flex items-center gap-4 text-gray-400 mt-2">
+               <Link href="#" aria-label="Twitter"><Twitter className="w-4 h-4 hover:text-white transition-colors" /></Link>
+               <Link href="#" aria-label="Facebook"><Facebook className="w-4 h-4 hover:text-white transition-colors" /></Link>
+               <Link href="#" aria-label="Instagram"><Instagram className="w-4 h-4 hover:text-white transition-colors" /></Link>
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col">
-            <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-8 font-medium">
-              Quick Links
-            </h4>
-            <ul className="flex flex-col gap-5">
-              {['Home', 'Our Solutions', 'About Us', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-xs text-gray-300 hover:text-white uppercase tracking-widest font-semibold transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="flex flex-col gap-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Quick Links</h4>
+            <div className="flex flex-col gap-3 text-sm text-gray-400">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <Link href="/solutions" className="hover:text-white transition-colors">Our Solutions</Link>
+              <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+            </div>
           </div>
 
           {/* Get In Touch */}
-          <div className="flex flex-col">
-            <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 mb-8 font-medium">
-              Get In Touch
-            </h4>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-start gap-4">
-                <Mail className="w-4 h-4 text-[#a855f7] mt-0.5 flex-shrink-0" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-xs text-gray-400">Email</span>
-                  <a href="mailto:CONTACT@PROFITAGENTZ.COM" className="text-[11px] text-gray-200 hover:text-white uppercase font-mono tracking-widest transition-colors break-all">
-                    CONTACT@PROFITAGENTZ.COM
-                  </a>
-                </div>
+          <div className="flex flex-col gap-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Get In Touch</h4>
+            <div className="flex flex-col gap-4 text-sm text-gray-400">
+              <div className="flex items-center gap-3">
+                 <Mail className="w-4 h-4 text-gray-500" />
+                 <a href="mailto:contact@profitagentz.com" className="hover:text-white transition-colors uppercase tracking-wider text-xs">contact@profitagentz.com</a>
               </div>
-              <div className="flex items-start gap-4">
-                <Phone className="w-4 h-4 text-[#a855f7] mt-0.5 flex-shrink-0" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-xs text-gray-400">Phone</span>
-                  <a href="tel:+918448335264" className="text-[11px] text-gray-200 hover:text-white font-mono tracking-widest transition-colors">
-                    +91 844 833 5264
-                  </a>
-                </div>
+              <div className="flex items-center gap-3">
+                 <Phone className="w-4 h-4 text-gray-500" />
+                 <span>+91 844 833 5264</span>
               </div>
-              <div className="flex items-start gap-4">
-                <MapPin className="w-4 h-4 text-[#a855f7] mt-0.5 flex-shrink-0" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-xs text-gray-400">Address</span>
-                  <span className="text-[11px] text-gray-200 font-mono tracking-wide leading-relaxed">
-                    New Delhi - 110072, NCR, India
-                  </span>
-                </div>
+              <div className="flex items-start gap-3">
+                 <MapPin className="w-4 h-4 text-gray-500 mt-0.5" />
+                 <span className="leading-relaxed">New Delhi - 110072,<br/>NCR, India</span>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* Divider */}
-        <div className="w-full border-t border-gray-900/80"></div>
+        {/* Bottom Legal Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 gap-6 text-[11px] text-gray-500 font-medium">
+           <div className="text-center md:text-left">
+             <p>Profit Agentz™ is a brand of AscendX Innovations Pvt. Ltd.</p>
+             <p className="mt-1">© 2026 AscendX Innovations Pvt. Ltd. All rights reserved.</p>
+           </div>
+           
+           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 uppercase tracking-wider">
+             <Link href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
+             <span>♦</span>
+             <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
+             <span>♦</span>
+             <Link href="/cookie" className="hover:text-gray-300 transition-colors">Cookie Policy</Link>
+             <span>♦</span>
+             <Link href="/ethics" className="hover:text-gray-300 transition-colors">AI Ethics</Link>
+           </div>
 
-        {/* Middle Sub-footer */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-10 gap-6">
-          <p className="text-gray-300 text-sm font-medium">
-            Profit Agentz™ is a brand of AscendX Innovations Pvt. Ltd.
-          </p>
-          <div className="flex flex-wrap items-center gap-3 md:gap-4 text-[10px] text-gray-400 uppercase tracking-widest font-mono font-medium">
-            <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="/terms-and-condition" className="hover:text-white transition-colors">Terms of Service</Link>
-            <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <span className="text-[#a855f7] text-[8px]">♦</span>
-            <Link href="/ai-ethics" className="hover:text-white transition-colors">AI Ethics</Link>
-          </div>
+           <button 
+             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+             className="uppercase tracking-wider hover:text-white transition-colors border border-gray-700 px-4 py-2 rounded"
+           >
+             Back To Top
+           </button>
         </div>
-
-        {/* Bottom Sub-footer */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-8 gap-4">
-          <p className="text-gray-500 text-[11px] font-medium tracking-wide">
-            © 2026 AscendX Innovations Pvt. Ltd. All rights reserved.
-          </p>
-          <button onClick={scrollToTop} className="text-gray-300 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-[#a855f7] transition-colors">
-            Back To Top
-          </button>
-        </div>
-
       </div>
 
-      {/* Huge Background Text */}
-      <div className="w-full flex justify-center mt-0 select-none overflow-hidden">
-        <span
-          className="font-black tracking-tighter uppercase whitespace-nowrap"
-          style={{
-            fontSize: 'clamp(3rem, 14vw, 15rem)',
-            lineHeight: '0.75',
-            color: '#1a0b2e',
-            marginBottom: '-3%',
-            WebkitTextStroke: '1px rgba(168, 85, 247, 0.1)'
-          }}
+      {/* Massive Logo */}
+      <div className="w-full flex justify-center items-end pointer-events-none select-none z-0 overflow-hidden leading-none h-[40vh] md:h-[60vh] max-h-[500px]">
+        <h1 
+          className="font-serif font-black tracking-tighter text-white/5 whitespace-nowrap leading-[0.75]"
+          style={{ fontSize: "clamp(8rem, 25vw, 40rem)", marginBottom: "-5%" }}
         >
-          Profit Agentz
-        </span>
+          ToolStack
+        </h1>
       </div>
     </footer>
   );
