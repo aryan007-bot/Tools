@@ -479,9 +479,9 @@ export function TermsContent() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {[
-                  { label: "Privacy Policy", href: "/privacy" },
-                  { label: "AI Ethics Policy", href: "#" },
-                  { label: "Cookie Policy", href: "#" }
+                  { label: "Privacy Policy", href: "/privacy-policy" },
+                  { label: "AI Ethics Policy", href: "/ai-ethics" },
+                  { label: "Cookie Policy", href: "/cookie-policy" }
                 ].map((doc) => (
                   <Link 
                     key={doc.label} 

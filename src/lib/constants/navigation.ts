@@ -25,8 +25,10 @@ export const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-and-condition" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
+    { label: "AI Ethics", href: "/ai-ethics" },
   ],
 };
 

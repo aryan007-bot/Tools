@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-lora)", "Georgia", "serif"],
         display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
       },
       colors: {
@@ -76,6 +77,14 @@ module.exports = {
           video: "#ef4444",
           fee: "#3b82f6",
           email: "#8b5cf6",
+        },
+        kira: {
+          DEFAULT: "#8B5CF6", // Bright Purple
+          dark: "#2A1B54", // Dark Purple text/sidebar
+          light: "#B4A5FF", // Hero Purple Box
+          teal: "#14B8A6", // Hero Teal Box
+          yellow: "#FBBF24", // Pencil Yellow
+          grid: "#9F85FF", // Grid background base
         },
       },
       borderRadius: {
