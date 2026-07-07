@@ -355,10 +355,10 @@ export function Workflow({
   // Autoplay effect - resets timer when user interacts or cards transition
   useEffect(() => {
     if (isHovered) return;
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
       handleNext();
-    }, 4500);
-    return () => clearInterval(interval);
+    }, 5000);
+    return () => clearTimeout(timer);
   }, [currentIndex, isHovered, handleNext]);
 
   // Wrap-around jump after CSS transition completes
