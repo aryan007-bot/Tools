@@ -11,28 +11,28 @@ const team = [
     role: "Founder and CEO",
     company: "ToolStack",
     description: "Drives technical vision and AI product strategy. Specializes in building autonomous systems and scalable infrastructure that deliver measurable business impact across enterprise markets.",
-    imgUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+    imgUrl: "/aditya.jpeg"
   },
   {
     name: "Aryan Dagar",
     role: "Co-Founder and CTO",
     company: "ToolStack",
     description: "Expert in full-stack architecture, machine learning model integration, and workflow optimization. Aryan oversees core technical systems development.",
-    imgUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
+    imgUrl: "/aryan.jpeg"
   },
   {
     name: "Ansh Vashist",
     role: "Co-Founder and AI Architect",
     company: "ToolStack",
     description: "Passionate about crafting premium user interfaces, motion animations, and responsive web experiences. Ansh is dedicated to polishing client experiences.",
-    imgUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+    imgUrl: "/ansh.jpeg"
   },
   {
     name: "Himanshu",
     role: "Marketing Head",
     company: "ToolStack",
     description: "Handles marketing and brand promotion, crafting strategies to elevate ToolStack’s presence across digital and enterprise platforms.",
-    imgUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80"
+    imgUrl: "/himanshu.jpeg"
   }
 ];
 
