@@ -22,7 +22,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string; style?: 
 
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="py-24 bg-white relative">
+    <section id="ecosystem" className="py-24 bg-[#FAF9F5] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-serif text-gray-900 tracking-tight leading-tight">
           Profit Agentz replaces fragmentation <br className="hidden md:block" />

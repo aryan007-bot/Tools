@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function Testimonials() {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden bg-[#FAF9F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,9 +18,9 @@ export function Testimonials() {
           <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4 block">
             Testimonials
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-display tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight text-gray-900">
             Loved by{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-pink-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-pink-500 font-serif">
               thousands
             </span>
           </h2>

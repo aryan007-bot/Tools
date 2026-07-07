@@ -5,11 +5,11 @@ import { ArrowUpRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="bg-[#f0f0f0] w-full relative pt-16 flex flex-col items-center overflow-hidden">
+    <section className="bg-[#FAF9F5] w-full relative pt-16 flex flex-col items-center overflow-hidden">
       {/* Faint Background Text */}
       <div className="w-full flex justify-center translate-y-8 md:translate-y-16 lg:translate-y-24 px-4">
         <h2 
-          className="font-black text-black/5 leading-none select-none tracking-tighter whitespace-nowrap"
+          className="font-medium font-serif text-black/5 leading-none select-none tracking-tighter whitespace-nowrap"
           style={{ fontSize: 'clamp(3rem, 12vw, 12rem)' }}
         >
           Let&apos;s Connect
@@ -21,7 +21,7 @@ export function CTA() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 md:pb-32 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 w-full">
           {/* Left Side */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium font-serif text-white tracking-tight leading-tight mb-6">
               Ready to build<br />
               something<br />
               that pays?
