@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
@@ -57,6 +57,13 @@ export function AboutContent() {
       setFormData({ name: "", email: "", message: "" });
     }, 3000);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleNext();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [currentIdx]);
 
   const currentMember = team[currentIdx];
 
