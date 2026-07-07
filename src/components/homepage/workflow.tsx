@@ -109,7 +109,7 @@ const realities = [
                   <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/30">▶</div>
                </div>
                <div className="absolute bottom-2 left-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[8px] py-1 px-2 rounded text-center font-medium">
-                  "AI automatically generates subtitles..."
+                  &quot;AI automatically generates subtitles...&quot;
                </div>
             </div>
             <div className="p-2.5 flex flex-col gap-1.5 bg-gray-50">
