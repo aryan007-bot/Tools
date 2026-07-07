@@ -53,7 +53,7 @@ export function Footer() {
             <div className="flex flex-col gap-4 text-sm text-gray-400">
               <div className="flex items-center gap-3">
                  <Mail className="w-4 h-4 text-gray-500" />
-                 <a href="mailto:contact@profitagentz.com" className="hover:text-white transition-colors uppercase tracking-wider text-xs">contact@profitagentz.com</a>
+                 <a href="mailto:contact@toolstack.com" className="hover:text-white transition-colors uppercase tracking-wider text-xs">contact@toolstack.com</a>
               </div>
               <div className="flex items-center gap-3">
                  <Phone className="w-4 h-4 text-gray-500" />
@@ -71,7 +71,7 @@ export function Footer() {
         {/* Bottom Legal Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 gap-6 text-[11px] text-gray-500 font-medium">
            <div className="text-center md:text-left">
-             <p>Profit Agentz™ is a brand of AscendX Innovations Pvt. Ltd.</p>
+             <p>ToolStack™ is a brand of AscendX Innovations Pvt. Ltd.</p>
              <p className="mt-1">© 2026 AscendX Innovations Pvt. Ltd. All rights reserved.</p>
            </div>
            

@@ -14,7 +14,7 @@ export function CTA() {
         {Array.from({ length: 15 }).map((_, i) => (
            <div key={i} className="whitespace-nowrap font-bold text-4xl mb-4">
              {Array.from({ length: 10 }).map((_, j) => (
-                <span key={j} className="mr-8">contact@profitagentz.com x</span>
+                <span key={j} className="mr-8">contact@toolstack.com x</span>
              ))}
            </div>
         ))}
