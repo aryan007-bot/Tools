@@ -134,21 +134,35 @@ export default function PricingPage() {
   }, []);
 
   return (
-    <div className="pt-28 bg-[#f9fafb] min-h-screen pb-32">
+    <div className="pt-28 bg-[#FAF9F5] min-h-screen pb-32 relative overflow-hidden">
+      {/* Background blurry blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-200/10 to-cyan-200/10 rounded-full blur-3xl" />
+      </div>
       {/* Hero */}
       <section className="pt-16 pb-12 relative overflow-hidden text-center">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block text-[11px] font-bold text-indigo-600 uppercase tracking-widest mb-4">
-              Profit Agentz Pricing
+            <span className="inline-block text-[11px] font-bold text-[#8B5CF6] bg-[#8B5CF6]/10 px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
+              ToolStack Pricing
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-              Build right features,
-              <br />
-              with confidence!
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-6 leading-[1.5] font-serif">
+              Build right{" "}
+              <span className="relative inline-block mx-1">
+                <svg className="absolute inset-0 w-full h-full text-[#B4A5FF] scale-110" preserveAspectRatio="none" viewBox="0 0 100 100" fill="currentColor">
+                   <path d="M5,5 L95,2 L98,95 L2,98 Z" opacity="0.8" />
+                </svg>
+                <span className="relative z-10 px-4 text-gray-900 font-serif">features</span>
+              </span>
+              <br className="hidden sm:block" />
+              with{" "}
+              <span className="inline-block bg-[#5EEAD4] px-4 rounded-md mx-1 transform -translate-y-1 text-gray-900 font-serif">
+                confidence!
+              </span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 font-medium">
-              Profit Agentz offers a straightforward pricing model, with plans starting at $15 per month.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 font-normal">
+              ToolStack offers a straightforward pricing model, with plans starting at $15 per month.
             </p>
 
             <div className="flex flex-col items-center justify-center gap-3 mb-16">
@@ -212,10 +226,10 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="pt-24 pb-12">
+      <section className="pt-24 pb-12 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Compare plans & features</h2>
+            <h2 className="text-3xl font-medium tracking-tight text-gray-900 font-serif">Compare plans & features</h2>
           </div>
 
           <div className="overflow-x-auto">
@@ -279,12 +293,12 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FAF9F5] relative z-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Pricing Questions</h2>
+            <h2 className="text-3xl font-medium tracking-tight text-gray-900 font-serif">Pricing Questions</h2>
           </motion.div>
-          <FaqSection faqs={pricingFaq} accentColor="#a855f7" />
+          <FaqSection faqs={pricingFaq} accentColor="#8B5CF6" />
         </div>
       </section>
     </div>

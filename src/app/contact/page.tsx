@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
+import { FaqSection } from "@/components/ui/faq-section";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,18 +51,24 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="pt-12 bg-[#e8e8e8] min-h-screen">
+    <div className="pt-12 bg-[#FAF9F5] min-h-screen relative overflow-hidden">
+      {/* Background blurry blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-200/10 to-cyan-200/10 rounded-full blur-3xl" />
+      </div>
+
       {/* Contact Section */}
-      <section id="contact" className="relative overflow-hidden bg-[#e8e8e8] pt-24 pb-0">
+      <section id="contact" className="relative overflow-hidden bg-[#FAF9F5] pt-24 pb-0 z-10">
         {/* Large back heading */}
         <div className="relative text-center overflow-hidden select-none mb-[-15px] sm:mb-[-30px] pointer-events-none">
-          <h2 className="font-black leading-none tracking-tighter uppercase text-[rgba(0,0,0,0.06)] whitespace-nowrap text-[4.5rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem]">
+          <h2 className="font-serif leading-none tracking-tight text-gray-900/5 whitespace-nowrap text-[4.5rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem]">
             Let&apos;s Connect
           </h2>
         </div>
 
         {/* Dark overlay wrapper */}
-        <div className="w-full bg-[#0a0a0a] rounded-t-[40px] border-t border-white/5 relative z-10 px-4 pt-10 sm:pt-28 pb-12 overflow-hidden">
+        <div className="w-full bg-[#0f1115] rounded-t-[40px] border-t border-white/5 relative z-10 px-4 pt-10 sm:pt-28 pb-12 overflow-hidden">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 sm:gap-16 items-center mb-12 sm:mb-16">
             
             {/* Left Column - Graphic/Copy */}
@@ -85,12 +90,12 @@ export default function ContactPage() {
 
               <div className="relative z-10">
                 <h3
-                  className="text-white font-black mb-3 text-3xl sm:text-4xl lg:text-[3rem] xl:text-[3.5rem] tracking-tight font-display"
+                  className="text-white font-medium mb-3 text-3xl sm:text-4xl lg:text-[3rem] xl:text-[3.5rem] tracking-tight font-serif"
                   style={{ lineHeight: "1.15" }}
                 >
                   Ready to build something that pays?
                 </h3>
-                <p className="text-zinc-400 font-light text-[15px] font-sans">
+                <p className="text-gray-400 font-normal text-[15px] font-sans">
                   Tell us about your software requirements
                 </p>
               </div>
@@ -136,7 +141,7 @@ export default function ContactPage() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="group flex w-full cursor-pointer select-none items-center justify-center gap-2 rounded-full bg-[#111111] py-4 text-xs font-extrabold uppercase tracking-widest text-white border border-white/5 shadow-[0_0_20px_rgba(139,92,246,0.32)] transition-all duration-300 hover:bg-black hover:shadow-[0_0_32px_rgba(139,92,246,0.55)]"
+                    className="group flex w-full cursor-pointer select-none items-center justify-center gap-2 rounded-full bg-gray-950 py-4 text-xs font-bold uppercase tracking-widest text-white border border-white/5 shadow-[0_0_20px_rgba(139,92,246,0.32)] transition-all duration-300 hover:bg-black hover:shadow-[0_0_32px_rgba(139,92,246,0.55)]"
                   >
                     {submitted ? "Sent Successfully!" : "Send Now!"}
                     <span className="transition-transform duration-300 group-hover:translate-x-1 font-sans">→</span>
@@ -156,7 +161,7 @@ export default function ContactPage() {
             >
               {Array(10).fill("contact@profitagentz.com").map((email, idx) => (
                 <div key={idx} className="flex items-center gap-16">
-                  <span className="normal-case text-zinc-300 font-mono">{email}</span>
+                  <span className="normal-case text-gray-300 font-sans">{email}</span>
                   <span className="text-purple-500 font-sans">×</span>
                 </div>
               ))}
@@ -167,90 +172,21 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative overflow-hidden bg-[#e8e8e8] py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-          <p className="text-center text-zinc-500 mb-3 text-[11px] tracking-[0.08em] font-semibold uppercase font-sans">FAQs</p>
+      <section className="relative overflow-hidden bg-[#FAF9F5] py-24 z-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <p className="text-center text-gray-500 mb-3 text-[11px] tracking-wider font-bold uppercase font-sans">FAQs</p>
           <div className="text-center mb-4">
-            <h2 className="font-black leading-none tracking-tight text-zinc-900 font-sans text-3xl sm:text-4xl lg:text-5xl uppercase">
+            <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-serif text-gray-900 leading-tight">
               Your Questions, Answered
             </h2>
           </div>
-          <p className="text-center text-zinc-500 font-light mb-16 mx-auto text-sm max-w-[440px] leading-relaxed font-sans">
+          <p className="text-center text-gray-500 font-normal mb-16 mx-auto text-sm sm:text-base max-w-[440px] leading-relaxed font-sans">
             Helping you understand our process and offerings at ToolStack.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-            
-            {/* Column 1 */}
-            <div className="flex flex-col gap-4">
-              {faqData.slice(0, 3).map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => setOpenFaq(openFaq === item.id ? null : item.id)}
-                  className="bg-[#f0f0f0] hover:bg-[#ebebeb] border border-black/5 rounded-3xl p-6 sm:p-8 cursor-pointer select-none transition-all duration-200"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <h4 className="font-bold text-zinc-900 leading-snug text-sm sm:text-base font-sans">
-                      {item.question}
-                    </h4>
-                    <div className="flex items-center justify-center rounded-full shrink-0 text-white w-6 h-6 bg-black text-xs font-bold transition-transform duration-200">
-                      {openFaq === item.id ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
-                    </div>
-                  </div>
-                  <AnimatePresence>
-                    {openFaq === item.id && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                        animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                        transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-sm text-zinc-600 leading-relaxed font-sans">
-                          {item.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
-
-            {/* Column 2 */}
-            <div className="flex flex-col gap-4">
-              {faqData.slice(3, 6).map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => setOpenFaq(openFaq === item.id ? null : item.id)}
-                  className="bg-[#f0f0f0] hover:bg-[#ebebeb] border border-black/5 rounded-3xl p-6 sm:p-8 cursor-pointer select-none transition-all duration-200"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <h4 className="font-bold text-zinc-900 leading-snug text-sm sm:text-base font-sans">
-                      {item.question}
-                    </h4>
-                    <div className="flex items-center justify-center rounded-full shrink-0 text-white w-6 h-6 bg-black text-xs font-bold transition-transform duration-200">
-                      {openFaq === item.id ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
-                    </div>
-                  </div>
-                  <AnimatePresence>
-                    {openFaq === item.id && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                        animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                        transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-sm text-zinc-600 leading-relaxed font-sans">
-                          {item.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
-
+          {/* Using the pre-built FaqSection component */}
+          <div className="max-w-4xl mx-auto">
+            <FaqSection faqs={faqData.map(f => ({ id: String(f.id), question: f.question, answer: f.answer }))} accentColor="#8B5CF6" />
           </div>
         </div>
       </section>
