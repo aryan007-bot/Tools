@@ -4,7 +4,7 @@ export const tools: Tool[] = [
   {
     id: "voice-to-excel",
     name: "Voice To Excel",
-    slug: "/voice-to-excel",
+    slug: "/tools/voice-to-excel",
     tagline: "Speak. Transcribe. Export.",
     description:
       "Convert spoken voice into structured Excel sheets automatically. Record, transcribe in real-time, categorize data intelligently, and export production-ready spreadsheets.",
@@ -22,9 +22,9 @@ export const tools: Tool[] = [
     accentColor: "#10b981",
   },
   {
-    id: "test-generator",
+    id: "text-generator",
     name: "Test Generator",
-    slug: "/test-generator",
+    slug: "/tools/text-generator",
     tagline: "Generate. Assess. Excel.",
     description:
       "Create tests, quizzes, and question papers automatically. Choose subjects, set difficulty levels, generate answer keys, and export to PDF in seconds.",
@@ -41,30 +41,11 @@ export const tools: Tool[] = [
     accentTo: "#f59e0b",
     accentColor: "#f97316",
   },
+
   {
-    id: "video-editor",
-    name: "Video Editor",
-    slug: "/video-editor",
-    tagline: "Edit. Enhance. Export.",
-    description:
-      "AI-assisted video editing with timeline controls, automatic subtitles, smart trimming, professional effects, and high-quality export.",
-    features: [
-      "Professional timeline editing",
-      "AI-powered auto subtitles",
-      "Smart clip trimming",
-      "Cinematic effects library",
-      "4K export support",
-    ],
-    icon: "Film",
-    image: "/WhatsApp Image 2026-06-20 at 10.43.38 PM (2).jpeg",
-    accentFrom: "#ef4444",
-    accentTo: "#ec4899",
-    accentColor: "#ef4444",
-  },
-  {
-    id: "fee-collection",
-    name: "Fee Collection",
-    slug: "/fee-collection",
+    id: "fee-collector",
+    name: "Fee Collector",
+    slug: "/tools/fee-collector",
     tagline: "Track. Collect. Report.",
     description:
       "Complete fee management system for schools and institutes. Track payments, send reminders, generate reports, and analyze financial data.",
@@ -84,7 +65,7 @@ export const tools: Tool[] = [
   {
     id: "email-assistant",
     name: "Email Assistant",
-    slug: "/email-assistant",
+    slug: "/tools/email-assistant",
     tagline: "Draft. Refine. Send.",
     description:
       "Generate, improve, and automate emails. From smart drafts to tone adjustments, templates to scheduling — your complete email workflow.",

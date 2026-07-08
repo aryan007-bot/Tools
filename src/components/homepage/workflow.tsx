@@ -8,7 +8,7 @@ const realities = [
     title: "Voice To Excel", 
     tag: "AI Transcriber",
     accent: "#8B5CF6",
-    link: "/voice-to-excel",
+    link: "/tools/voice-to-excel",
     features: ["Real-time speech translation", "Smart table formatting", "One-click Excel export"],
     desc: "Convert spoken voice into structured Excel sheets automatically. Record, transcribe in real-time, categorize data intelligently, and export production-ready spreadsheets.",
     mockup: (
@@ -57,7 +57,7 @@ const realities = [
     title: "Test Generator", 
     tag: "AI Educator",
     accent: "#10B981",
-    link: "#",
+    link: "/tools/text-generator",
     features: ["Custom quiz parameters", "Instant answer keys", "PDF export format"],
     desc: "Create tests, quizzes, and question papers automatically. Choose subjects, set difficulty levels, generate answer keys, and export to PDF in seconds.",
     mockup: (
@@ -92,48 +92,10 @@ const realities = [
     )
   },
   { 
-    title: "Video Editor", 
-    tag: "AI Creative",
-    accent: "#F59E0B",
-    link: "/video-editor",
-    features: ["Timeline timeline controls", "Smart subtitles auto-generator", "Lossless video exporting"],
-    desc: "AI-assisted video editing with timeline controls, automatic subtitles, smart trimming, professional effects, and high-quality export.",
-    mockup: (
-      <div className="w-full h-56 md:h-72 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-amber-100/50 shadow-inner">
-         <div className="absolute -left-10 -bottom-10 w-36 h-36 bg-[#FBBF24]/15 rounded-full blur-xl" />
-         <div className="absolute -right-10 -top-10 w-36 h-36 bg-orange-400/10 rounded-full blur-xl" />
-         <div className="relative w-full max-w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
-            <div className="w-full h-28 bg-gray-900 flex items-center justify-center relative">
-               <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=300&q=80" alt="Video frame" className="w-full h-full object-cover opacity-70" />
-               <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/30">▶</div>
-               </div>
-               <div className="absolute bottom-2 left-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[8px] py-1 px-2 rounded text-center font-medium">
-                  &quot;AI automatically generates subtitles...&quot;
-               </div>
-            </div>
-            <div className="p-2.5 flex flex-col gap-1.5 bg-gray-50">
-               <div className="flex justify-between items-center text-[7px] text-gray-400 font-bold">
-                  <span>0:00</span>
-                  <span>0:15</span>
-                  <span>0:30</span>
-               </div>
-               <div className="w-full h-6 bg-amber-100 rounded-md border border-amber-200 relative overflow-hidden flex items-center px-1 gap-0.5">
-                  <div className="w-20 h-4 bg-amber-500 rounded border border-amber-600 flex-shrink-0" />
-                  <div className="w-16 h-4 bg-orange-500 rounded border border-orange-600 flex-shrink-0" />
-                  <div className="w-24 h-4 bg-yellow-500 rounded border border-yellow-600 flex-shrink-0" />
-                  <div className="absolute left-1/3 top-0 bottom-0 w-0.5 bg-red-500 z-10" />
-               </div>
-            </div>
-         </div>
-      </div>
-    )
-  },
-  { 
     title: "Fee Collection", 
     tag: "AI Finance",
     accent: "#EF4444",
-    link: "#",
+    link: "/tools/fee-collector",
     features: ["Automated payment tracking", "Automatic email reminders", "Financial analytics"],
     desc: "Complete fee management system for schools and institutes. Track payments, send reminders, generate reports, and analyze financial data.",
     mockup: (
@@ -178,7 +140,7 @@ const realities = [
     title: "Email Assistant", 
     tag: "AI Assistant",
     accent: "#3B82F6",
-    link: "#",
+    link: "/tools/email-assistant",
     features: ["Context-aware drafting", "Tone Adjustment settings", "Integrated scheduling tools"],
     desc: "Generate, improve, and automate emails. From smart drafts to tone adjustments, templates to scheduling — your complete email workflow.",
     mockup: (
@@ -203,41 +165,6 @@ const realities = [
             <div className="flex gap-2 justify-end mt-2 pt-2 border-t border-gray-50">
                <div className="h-5 px-2 bg-gray-100 text-[8px] font-semibold text-gray-500 rounded flex items-center justify-center">Tone: Casual</div>
                <div className="h-5 px-2.5 bg-blue-600 text-[8px] font-bold text-white rounded flex items-center justify-center shadow-sm">Insert Draft</div>
-            </div>
-         </div>
-      </div>
-    )
-  },
-  { 
-    title: "Unified Dashboard", 
-    tag: "AI Integrator",
-    accent: "#8B5CF6",
-    link: "#",
-    features: ["Centralized control panel", "Real-time statistics & graphs", "Multi-tool data syncing"],
-    desc: "Manage all your business operations from a single unified interface. Gain insights, track metrics, and scale your business faster with our integrated suite of AI tools.",
-    mockup: (
-      <div className="w-full h-56 md:h-72 bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-violet-100/50 shadow-inner">
-         <div className="absolute -left-10 -top-10 w-36 h-36 bg-violet-500/10 rounded-full blur-xl" />
-         <div className="absolute -right-10 -bottom-10 w-36 h-36 bg-[#8B5CF6]/10 rounded-full blur-xl" />
-         <div className="relative w-full max-w-[280px] bg-white rounded-xl shadow-lg border border-gray-100 p-4 flex flex-col gap-2.5">
-            <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-               <span className="text-[10px] font-bold text-gray-800">Unified Operations</span>
-               <div className="w-2.5 h-2.5 bg-[#8B5CF6] rounded-full flex items-center justify-center text-[6px] text-white">★</div>
-            </div>
-            <div className="flex items-center gap-4">
-               <div className="relative w-16 h-16 rounded-full border-4 border-gray-100 flex items-center justify-center flex-shrink-0">
-                  <svg className="absolute inset-0 w-full h-full -rotate-90">
-                     <circle cx="28" cy="28" r="26" fill="none" stroke="#8B5CF6" strokeWidth="4" strokeDasharray="163" strokeDashoffset="41" />
-                  </svg>
-                  <span className="text-[10px] font-black text-gray-800">75%</span>
-               </div>
-               <div className="flex flex-col gap-1 w-full">
-                  <div className="text-[8px] font-bold text-gray-400 uppercase tracking-wider">Workspace Sync</div>
-                  <div className="text-xs font-black text-gray-800">5/6 Tools Active</div>
-                  <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
-                     <div className="w-5/6 h-full bg-[#8B5CF6]" />
-                  </div>
-               </div>
             </div>
          </div>
       </div>
