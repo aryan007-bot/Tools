@@ -54,13 +54,12 @@ export function ToolHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-8"
-                style={{ backgroundColor: `${accentColor}15`, color: accentColor }}
-              >
-                <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
-                {tagline}
-              </span>
+              <div className="flex items-center gap-2 mb-8">
+                <span className="text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: accentColor }}>
+                  {tagline}
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
+              </div>
             </motion.div>
 
             <motion.h1

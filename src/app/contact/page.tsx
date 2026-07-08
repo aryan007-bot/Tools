@@ -51,7 +51,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="pt-12 bg-[#FAF9F5] min-h-screen relative overflow-hidden">
+    <div className="pt-20 bg-[#FAF9F5] min-h-screen relative overflow-hidden">
       {/* Background blurry blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
@@ -59,7 +59,7 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Section */}
-      <section id="contact" className="relative overflow-hidden bg-[#FAF9F5] pt-24 pb-0 z-10">
+      <section id="contact" className="relative overflow-hidden bg-[#FAF9F5] pt-4 pb-0 z-10">
         {/* Large back heading */}
         <div className="relative text-center overflow-hidden select-none mb-[-15px] sm:mb-[-30px] pointer-events-none">
           <h2 className="font-serif leading-none tracking-tight text-gray-900/5 whitespace-nowrap text-[4.5rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem]">
@@ -68,7 +68,7 @@ export default function ContactPage() {
         </div>
 
         {/* Light premium wrapper */}
-        <div className="w-full bg-white/70 backdrop-blur-md rounded-t-[40px] border-t border-gray-200/50 relative z-10 px-4 pt-10 sm:pt-28 pb-12 overflow-hidden">
+        <div className="w-full bg-white/70 backdrop-blur-md rounded-t-[40px] border-t border-gray-200/50 relative z-10 px-4 pt-10 sm:pt-14 pb-12 overflow-hidden">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 sm:gap-16 items-center mb-12 sm:mb-16">
             
             {/* Left Column - Graphic/Copy */}

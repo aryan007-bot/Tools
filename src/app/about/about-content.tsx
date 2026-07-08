@@ -68,7 +68,7 @@ export function AboutContent() {
   const currentMember = team[currentIdx];
 
   return (
-    <div className="bg-[#FAF9F5] text-gray-900 font-sans antialiased selection:bg-purple-500/30 selection:text-gray-900 min-h-screen pt-28 relative overflow-hidden">
+    <div className="bg-[#FAF9F5] text-gray-900 font-sans antialiased selection:bg-purple-500/30 selection:text-gray-900 min-h-screen pt-20 relative overflow-hidden">
       {/* Background blurry blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
@@ -76,7 +76,7 @@ export function AboutContent() {
       </div>
 
       {/* 1. Hero Section */}
-      <section className="mx-auto mb-20 flex max-w-6xl flex-col items-center px-6 pt-16 text-center relative z-10">
+      <section className="mx-auto mb-12 flex max-w-6xl flex-col items-center px-6 pt-4 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -135,9 +135,9 @@ export function AboutContent() {
         <h2 className="mb-12 max-w-3xl text-2xl font-medium leading-snug tracking-tight text-gray-900 sm:text-3xl md:text-4xl font-serif">
           To empower educators and administrators with autonomous systems that eliminate repetitive labor, unlock student insights, and connect intervention 24/7.
         </h2>
-        <div className="flex max-w-xl flex-wrap justify-center gap-2.5">
+        <div className="flex max-w-xl flex-wrap justify-center gap-x-6 gap-y-4">
           {["Classroom Automation", "Bespoke AI Assistants", "FERPA & COPPA Compliant", "Outcome-Driven"].map((tag) => (
-            <span key={tag} className="cursor-default select-none rounded-full bg-gray-900 px-5 py-2.5 font-sans text-[11px] font-semibold uppercase tracking-wider text-white shadow-sm">
+            <span key={tag} className="cursor-default select-none font-sans text-xs font-bold uppercase tracking-[0.15em] text-slate-800 border-b-2 border-slate-900 pb-1.5 px-1 hover:text-[#8B5CF6] hover:border-[#8B5CF6] transition-all duration-300">
               {tag}
             </span>
           ))}
@@ -145,7 +145,7 @@ export function AboutContent() {
       </section>
 
       {/* 3. Interactive Founder/Team Slider Section */}
-      <section className="relative flex w-full flex-col items-center overflow-hidden border-t border-gray-200 bg-[#FAF9F5] py-16 sm:py-24">
+      <section className="relative flex w-full flex-col items-center overflow-hidden border-t border-gray-200 bg-[#FAF9F5] py-12 sm:py-16">
         {/* Glow */}
         <div className="pointer-events-none absolute left-1/4 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[100px]" />
         
@@ -195,7 +195,10 @@ export function AboutContent() {
             {/* Right - Profile Description copy */}
             <div className="flex flex-col justify-center space-y-4 lg:col-span-6 text-center lg:text-left relative z-10">
               <div className="space-y-3">
-                <span className="inline-block select-none font-sans text-[11px] font-bold uppercase tracking-wider text-[#8B5CF6] bg-[#8B5CF6]/10 px-3 py-1 rounded-full mb-1">Intro</span>
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-1 select-none">
+                  <span className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[#8B5CF6]">Intro</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-pulse" />
+                </div>
                 <h3 className="select-none font-medium text-gray-900 text-3xl sm:text-4xl lg:text-[2.5rem] tracking-tight font-serif">
                   Meet the Team
                 </h3>

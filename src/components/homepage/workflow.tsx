@@ -174,61 +174,63 @@ const realities = [
 
 const compliances = [
   { 
-    title: "Teachers review and control all instructional content", 
-    color: "bg-[#8B5CF6]",
+    name: "Model Isolation",
+    desc: "We never train public AI models on your inputs or spreadsheet files. Your workspace database stays isolated.", 
+    color: "bg-purple-500/10 text-purple-600 border border-purple-200/30",
     icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-         {/* Sliders */}
-         <rect x="8" y="10" width="6" height="20" fill="white" rx="1" />
-         <rect x="17" y="5" width="6" height="25" fill="white" rx="1" opacity="0.7" />
-         <rect x="26" y="15" width="6" height="20" fill="white" rx="1" />
-         {/* Knobs */}
-         <circle cx="11" cy="22" r="5" fill="white" />
-         <circle cx="20" cy="12" r="5" fill="white" opacity="0.9" />
-         <circle cx="29" cy="27" r="5" fill="white" />
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="w-12 h-12">
+        <circle cx="24" cy="24" r="22" fill="#F3E8FF" />
+        <path d="M24 8 L38 13.5 V 24 C38 33 24 40 24 40 C24 40 10 33 10 24 V 13.5 Z" fill="#8B5CF6" />
+        <path d="M24 11.5 L35 15.8 V 24 C35 30.8 24 36.2 24 36.2 V 11.5 Z" fill="#7C3AED" opacity="0.85" />
+        <circle cx="24" cy="21" r="5" fill="#FBBF24" />
+        <rect x="22" y="24" width="4" height="6" rx="1" fill="#FBBF24" />
       </svg>
     )
   },
   { 
-    title: "Rubrics, logic, and adaptations are visible and explainable", 
-    color: "bg-[#14B8A6]",
+    name: "Enterprise Encryption",
+    desc: "All audio transcribing, exports, and document creations are encrypted using banking-grade AES-256 standard.", 
+    color: "bg-teal-500/10 text-teal-600 border border-teal-200/30",
     icon: (
-      <div className="relative w-[40px] h-[40px] flex items-center justify-center">
-         <div className="absolute inset-0 bg-[#A78BFA] opacity-50 rounded-full scale-125 translate-x-2 -translate-y-1" />
-         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="relative z-10 text-white">
-            <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="4" />
-            <line x1="21" y1="21" x2="28" y2="28" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-            <circle cx="14" cy="14" r="4" fill="currentColor" opacity="0.3" />
-         </svg>
-      </div>
-    )
-  },
-  { 
-    title: "Student data remains under district control", 
-    color: "bg-[#FBBF24]",
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-         {/* Lock Body */}
-         <rect x="8" y="18" width="24" height="18" fill="#EF4444" rx="2" />
-         {/* Lock Shackle */}
-         <path d="M 12 18 V 12 A 8 8 0 0 1 28 12 V 18" stroke="#F97316" strokeWidth="4" />
-         {/* Keyhole */}
-         <circle cx="20" cy="25" r="3" fill="#FCA5A5" />
-         <rect x="19" y="27" width="2" height="4" fill="#FCA5A5" />
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="w-12 h-12">
+        <circle cx="24" cy="24" r="22" fill="#E6FFFA" />
+        <rect x="13" y="13" width="22" height="22" rx="4" fill="#0D9488" />
+        <rect x="16" y="16" width="16" height="16" rx="2" fill="#0F766E" />
+        <circle cx="24" cy="24" r="5" fill="#F59E0B" />
+        <line x1="24" y1="18" x2="24" y2="21" stroke="white" strokeWidth="2" />
+        <line x1="24" y1="27" x2="24" y2="30" stroke="white" strokeWidth="2" />
+        <line x1="18" y1="24" x2="21" y2="24" stroke="white" strokeWidth="2" />
+        <line x1="27" y1="24" x2="30" y2="24" stroke="white" strokeWidth="2" />
       </svg>
     )
   },
   { 
-    title: "Designed to meet FERPA and COPPA requirements by default", 
-    color: "bg-[#F97316]",
+    name: "100% IP Ownership",
+    desc: "You retain full commercial usage rights and copyright ownership of all AI-generated spreadsheets and video files.", 
+    color: "bg-amber-500/10 text-amber-600 border border-amber-200/30",
     icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-         {/* Shield */}
-         <path d="M 5 5 L 20 0 L 35 5 V 20 Q 35 35 20 40 Q 5 35 5 20 Z" fill="#EF4444" />
-         {/* Inner Shield */}
-         <path d="M 10 9 L 20 5 L 30 9 V 20 Q 30 30 20 34 Q 10 30 10 20 Z" fill="#F87171" />
-         {/* Checkmark */}
-         <path d="M 13 20 L 18 25 L 27 14" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="w-12 h-12">
+        <circle cx="24" cy="24" r="22" fill="#FEF3C7" />
+        <path d="M16 28 L14 42 L24 37 L34 42 L32 28 Z" fill="#F59E0B" />
+        <path d="M24 37 L34 42 L32 28 L24 28 Z" fill="#D97706" />
+        <circle cx="24" cy="22" r="11" fill="#FBBF24" />
+        <circle cx="24" cy="22" r="9" fill="#F59E0B" />
+        <polygon points="24,15 26.5,20.5 32.5,21.2 28,25 29.5,31 24,28 18.5,31 20,25 15.5,21.2 21.5,20.5" fill="white" />
+      </svg>
+    )
+  },
+  { 
+    name: "High-Performance SLA",
+    desc: "Uptime guarantee backed by distributed server clusters for prompt compiles and rapid video rendering.", 
+    color: "bg-rose-500/10 text-rose-600 border border-rose-200/30",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="w-12 h-12">
+        <circle cx="24" cy="24" r="22" fill="#FFE4E6" />
+        <path d="M12 28 C12 18, 18 12, 24 12 C30 12, 36 18, 36 28" stroke="#F43F5E" strokeWidth="4" strokeLinecap="round" />
+        <path d="M24 12 C30 12, 36 18, 36 28" stroke="#E11D48" strokeWidth="4" strokeLinecap="round" />
+        <polygon points="24,14 18,24 23,24 21,32 29,20 24,20" fill="#EF4444" />
+        <circle cx="24" cy="28" r="4" fill="#4B5563" />
+        <line x1="24" y1="28" x2="30" y2="18" stroke="#4B5563" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
     )
   }
@@ -239,13 +241,15 @@ interface WorkflowProps {
   showHeader?: boolean;
   bgClass?: string;
   cardBgClass?: string;
+  paddingClass?: string;
 }
 
 export function Workflow({ 
   showCompliance = true, 
   showHeader = true,
   bgClass = "bg-white",
-  cardBgClass = "bg-[#FAF9F5]"
+  cardBgClass = "bg-[#FAF9F5]",
+  paddingClass = "py-24"
 }: WorkflowProps) {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -338,7 +342,7 @@ export function Workflow({
   const activeDot = currentIndex === 0 ? total - 1 : currentIndex === total + 1 ? 0 : currentIndex - 1;
 
   return (
-    <section className={`${bgClass} py-24 font-sans overflow-hidden`}>
+    <section className={`${bgClass} ${paddingClass} font-sans overflow-hidden`}>
       <div className="max-w-[1100px] mx-auto px-6">
         
         {/* Header */}
@@ -383,7 +387,7 @@ export function Workflow({
 
         {/* Carousel Slider */}
         <div 
-          className="w-full relative mb-32"
+          className="w-full relative mb-16 md:mb-20"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
@@ -407,12 +411,15 @@ export function Workflow({
                   <div className={`${cardBgClass} border border-gray-100 rounded-[32px] p-6 md:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.06)] transition-all duration-500 flex flex-col md:flex-row gap-8 md:gap-12 items-center max-w-[900px] mx-auto relative overflow-hidden`}>
                     {/* Left details */}
                     <div className="w-full md:w-1/2 flex flex-col items-start text-left gap-4 md:gap-5">
-                      <span 
-                        className="text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full"
-                        style={{ color: item.accent, backgroundColor: `${item.accent}15` }}
-                      >
-                        {item.tag}
-                      </span>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span 
+                          className="text-[9px] font-black uppercase tracking-[0.22em] font-sans"
+                          style={{ color: item.accent }}
+                        >
+                          {item.tag}
+                        </span>
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.accent }} />
+                      </div>
                       <h3 className="font-serif text-[1.75rem] md:text-[2.25rem] text-[#1F2937] leading-tight font-bold">
                         {item.title}
                       </h3>
@@ -507,45 +514,44 @@ export function Workflow({
 
         {/* Compliance Section */}
         {showCompliance && (
-          <div className="w-full flex flex-col items-center pt-2 border-t-0 mt-8">
-            <h2 className="text-[2rem] md:text-[2.5rem] font-serif text-[#1F2937] mb-12 text-center">
-              Built for business. Secure by design.
+          <div className="w-full flex flex-col items-center pt-2 border-t-0 mt-20">
+            <h2 className="text-[2.2rem] md:text-[2.8rem] font-bold text-[#0F172A] tracking-tight mb-4 text-center">
+              Enterprise Trust. Built for Scale.
             </h2>
+            <p className="text-slate-500 text-sm md:text-base max-w-[600px] text-center mb-12 leading-relaxed">
+              We design our AI business pipeline with enterprise isolation, zero data leaks, and guaranteed output ownership.
+            </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full max-w-[900px] mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1000px] mb-16">
               {compliances.map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-4">
-                  <div className={`w-[90px] h-[90px] rounded-[16px] ${item.color} flex items-center justify-center shadow-md transform group-hover:scale-105 transition-transform`}>
-                     {item.icon}
+                <div key={i} className="w-full h-64 [perspective:1000px] group cursor-pointer">
+                  <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                     {/* Front Side */}
+                     <div className="absolute inset-0 [backface-visibility:hidden] bg-white border border-gray-100/90 rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center text-center gap-4 hover:border-purple-200/50 transition-all duration-300">
+                        <div className="p-1">
+                          {item.icon}
+                        </div>
+                        <h4 className="text-base font-bold text-slate-800 tracking-tight">{item.name}</h4>
+                        <span className="text-[9px] font-extrabold text-[#8B5CF6] uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full border border-purple-100/40 animate-pulse mt-1">
+                          Hover to Reveal
+                        </span>
+                     </div>
+
+                     {/* Back Side */}
+                     <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-[#1E1B4B] via-[#0F172A] to-[#1E293B] border border-slate-800 rounded-2xl p-6 text-white flex flex-col items-center justify-center text-center gap-3 shadow-2xl">
+                        <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white border border-white/10 shadow-sm mb-0.5">
+                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-emerald-400">
+                             <polyline points="20 6 9 17 4 12" />
+                           </svg>
+                        </div>
+                        <h4 className="text-xs font-bold text-slate-200 tracking-tight">{item.name}</h4>
+                        <p className="text-[11px] text-slate-300 leading-relaxed max-w-[210px]">
+                          {item.desc}
+                        </p>
+                     </div>
                   </div>
-                  <p className="text-[#4B5563] text-[11px] font-medium leading-relaxed px-2 mt-2">
-                    {item.title}
-                  </p>
                 </div>
               ))}
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[900px] bg-[#F9FAFB] rounded-xl px-8 py-5 border-none">
-               <span className="text-sm font-semibold text-[#4B5563] mb-4 md:mb-0">Security and privacy you can trust</span>
-               <div className="flex items-center gap-4">
-                  {/* Simulated Seals */}
-                  {[
-                    { outer: "#2563EB", inner: "#60A5FA", tick: true },
-                    { outer: "#10B981", inner: "#A7F3D0", tick: true },
-                    { outer: "#0284C7", inner: "#7DD3FC", tick: false, text: "SOC 2" },
-                    { outer: "#EAB308", inner: "#FDE047", tick: false, star: true },
-                    { outer: "#8B5CF6", inner: "#C4B5FD", tick: false, star: true },
-                    { outer: "#4338CA", inner: "#818CF8", tick: false }
-                  ].map((seal, j) => (
-                    <div key={j} className="relative w-8 h-8 rounded-full flex items-center justify-center shadow-sm" style={{ backgroundColor: seal.outer }}>
-                       <div className="w-5 h-5 rounded-full flex items-center justify-center" style={{ backgroundColor: seal.inner }}>
-                          {seal.tick && <svg viewBox="0 0 24 24" className="w-3 h-3 text-white"><path d="M5 12l5 5L20 7" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                          {seal.text && <span className="text-[5px] font-bold text-white">{seal.text}</span>}
-                          {seal.star && <svg viewBox="0 0 24 24" className="w-3 h-3 text-white fill-current"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>}
-                       </div>
-                    </div>
-                  ))}
-               </div>
             </div>
           </div>
         )}

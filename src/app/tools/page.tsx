@@ -7,7 +7,7 @@ export default function ToolsPage() {
   return (
     <div className="pt-20 bg-[#FAF9F5] min-h-screen">
       {/* Hero Section of Tools Page */}
-      <section className="relative overflow-hidden pt-20 pb-16 bg-[#FAF9F5] text-center flex flex-col items-center">
+      <section className="relative overflow-hidden pt-4 pb-16 bg-[#FAF9F5] text-center flex flex-col items-center">
         {/* Background blurry blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
@@ -21,9 +21,12 @@ export default function ToolsPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-5"
           >
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#8B5CF6] bg-[#8B5CF6]/10 px-3.5 py-1.5 rounded-full">
-              Explore Our Suite
-            </span>
+            <div className="flex items-center justify-center gap-1">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8B5CF6]">
+                Explore Our Suite
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-pulse" />
+            </div>
           </motion.div>
 
           <motion.h1
@@ -60,6 +63,7 @@ export default function ToolsPage() {
         showHeader={false} 
         bgClass="bg-[#FAF9F5]" 
         cardBgClass="bg-white" 
+        paddingClass="pt-4 pb-16"
       />
     </div>
   );

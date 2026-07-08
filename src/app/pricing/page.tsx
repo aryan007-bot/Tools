@@ -15,6 +15,40 @@ export default function PricingPage() {
   const [pricingTiers, setPricingTiers] = useState<PricingTier[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const formatValue = (val: string | number) => {
+    if (val === 'Unlimited') {
+      return (
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50/80 text-emerald-700 border border-emerald-100/30">
+          Unlimited
+        </span>
+      );
+    }
+    return (
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-50 text-gray-700 border border-gray-200/40">
+        {val}
+      </span>
+    );
+  };
+
+  const renderCheckOrDash = (hasFeature: boolean) => {
+    if (hasFeature) {
+      return (
+        <div className="flex justify-center">
+          <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 border border-emerald-500/20 shadow-sm">
+            <Check className="w-3.5 h-3.5" strokeWidth={3.5} />
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div className="flex justify-center">
+        <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center text-gray-300 border border-gray-100/50">
+          <span className="text-[10px] font-bold leading-none -mt-[1px]">—</span>
+        </div>
+      </div>
+    );
+  };
+
   useEffect(() => {
     const fetchPlans = async () => {
       try {
@@ -134,19 +168,22 @@ export default function PricingPage() {
   }, []);
 
   return (
-    <div className="pt-28 bg-[#FAF9F5] min-h-screen pb-32 relative overflow-hidden">
+    <div className="pt-20 bg-[#FAF9F5] min-h-screen pb-32 relative overflow-hidden">
       {/* Background blurry blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
         <div className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-200/10 to-cyan-200/10 rounded-full blur-3xl" />
       </div>
       {/* Hero */}
-      <section className="pt-16 pb-12 relative overflow-hidden text-center">
+      <section className="pt-4 pb-12 relative overflow-hidden text-center">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block text-[11px] font-bold text-[#8B5CF6] bg-[#8B5CF6]/10 px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
-              ToolStack Pricing
-            </span>
+            <div className="inline-flex items-center gap-2 mb-5">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8B5CF6]">
+                ToolStack Pricing
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-pulse" />
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-6 leading-[1.5] font-serif">
               Build right{" "}
               <span className="relative inline-block mx-1">
@@ -226,74 +263,107 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="pt-24 pb-12 relative z-10">
+      <section className="pt-12 pb-6 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-medium tracking-tight text-gray-900 font-serif">Compare plans & features</h2>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm text-left">
-              <thead className="border-b border-gray-200">
-                <tr>
-                  <th className="py-6 px-4 font-semibold text-gray-900 w-1/3 text-lg">Plans</th>
-                  {pricingTiers.map(t => (
-                    <th key={t.id} className="py-6 px-4 text-center font-bold text-lg text-gray-900">
-                      {t.name}
+          <div className="overflow-hidden bg-white border border-gray-200/50 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm text-left border-collapse table-fixed min-w-[800px]">
+                <thead className="bg-[#FAF9F5]/40 border-b border-gray-200/60">
+                  <tr>
+                    <th className="py-5 px-6 font-bold text-slate-400 text-xs uppercase tracking-widest w-[32%]">
+                      Plans & Features
                     </th>
+                    {pricingTiers.map(t => (
+                      <th key={t.id} className="py-5 px-6 text-center w-[17%]">
+                        <div className="flex flex-col items-center gap-1.5">
+                          <span className={cn("font-bold text-sm tracking-tight", t.popular ? "text-[#8B5CF6]" : "text-gray-900")}>
+                            {t.name}
+                          </span>
+                          {t.popular && (
+                            <span className="text-[9px] font-black uppercase tracking-wider bg-purple-50 text-[#8B5CF6] px-2 py-0.5 rounded-full border border-purple-100/30">
+                              Popular
+                            </span>
+                          )}
+                        </div>
+                      </th>
+                    ))}
+                    {pricingTiers.length === 0 && (
+                      <>
+                        <th className="py-5 px-6 text-center font-bold text-sm text-gray-900 w-[17%]">Free</th>
+                        <th className="py-5 px-6 text-center font-bold text-sm text-gray-900 w-[17%]">Starter</th>
+                        <th className="py-5 px-6 text-center w-[17%]">
+                          <div className="flex flex-col items-center gap-1.5">
+                            <span className="font-bold text-sm text-[#8B5CF6]">Growth</span>
+                            <span className="text-[9px] font-black uppercase tracking-wider bg-purple-50 text-[#8B5CF6] px-2 py-0.5 rounded-full border border-purple-100/30">
+                              Popular
+                            </span>
+                          </div>
+                        </th>
+                        <th className="py-5 px-6 text-center font-bold text-sm text-gray-900 w-[17%]">Premium</th>
+                      </>
+                    )}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100/80">
+                  <tr>
+                    <td colSpan={5} className="py-3 px-6 font-black text-[9px] uppercase tracking-[0.2em] text-[#8B5CF6] bg-slate-50/50">
+                      Core Platform Features
+                    </td>
+                  </tr>
+                  {[
+                    { name: "Feedback Posts", values: ["Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
+                    { name: "End Users", values: ["Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
+                    { name: "Boards", values: ["1", "2", "10", "Unlimited"] },
+                    { name: "Admins", values: ["1", "2", "3", "10"] }
+                  ].map((row, idx) => (
+                    <tr key={idx} className="hover:bg-purple-50/5 transition-colors">
+                      <td className="py-4 px-6 text-gray-700 font-medium text-sm">
+                        {row.name}
+                      </td>
+                      {row.values.map((val, cIdx) => (
+                        <td key={cIdx} className="py-4 px-6 text-center">
+                          {formatValue(val)}
+                        </td>
+                      ))}
+                    </tr>
                   ))}
-                  {pricingTiers.length === 0 && (
-                    <>
-                      <th className="py-6 px-4 text-center font-bold text-lg text-gray-900">Free</th>
-                      <th className="py-6 px-4 text-center font-bold text-lg text-gray-900">Starter</th>
-                      <th className="py-6 px-4 text-center font-bold text-lg text-gray-900">Growth</th>
-                      <th className="py-6 px-4 text-center font-bold text-lg text-gray-900">Premium</th>
-                    </>
-                  )}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                <tr>
-                  <td colSpan={5} className="py-6 px-4 font-bold text-gray-900 bg-gray-50/50">Features</td>
-                </tr>
-                {["Feedback Posts", "End Users", "Boards", "Admins"].map((feature, idx) => (
-                  <tr key={idx} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="py-4 px-4 text-gray-600 font-medium flex items-center gap-1.5">
-                      {feature}
-                    </td>
-                    <td className="py-4 px-4 text-center text-gray-900 font-medium">Unlimited</td>
-                    <td className="py-4 px-4 text-center text-gray-900 font-medium">Unlimited</td>
-                    <td className="py-4 px-4 text-center text-gray-900 font-medium">{idx === 2 ? '10' : idx === 3 ? '3' : 'Unlimited'}</td>
-                    <td className="py-4 px-4 text-center text-gray-900 font-medium">Unlimited</td>
-                  </tr>
-                ))}
-                {["Brand Customization", "Email Customization", "Single Sign-On (SSO)", "Custom Domain"].map((feature, idx) => (
-                  <tr key={idx} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="py-4 px-4 text-gray-600 font-medium flex items-center gap-1.5">
-                      {feature}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {idx === 0 ? <Check className="w-4 h-4 text-emerald-500 mx-auto" /> : <span className="text-gray-300">—</span>}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {idx < 2 ? <Check className="w-4 h-4 text-emerald-500 mx-auto" /> : <span className="text-gray-300">—</span>}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      <Check className="w-4 h-4 text-emerald-500 mx-auto" />
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      <Check className="w-4 h-4 text-emerald-500 mx-auto" />
+                  <tr>
+                    <td colSpan={5} className="py-3 px-6 font-black text-[9px] uppercase tracking-[0.2em] text-[#8B5CF6] bg-slate-50/50">
+                      Advanced Administration
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                  {["Brand Customization", "Email Customization", "Single Sign-On (SSO)", "Custom Domain"].map((feature, idx) => (
+                    <tr key={idx} className="hover:bg-purple-50/5 transition-colors border-b border-gray-100 last:border-0">
+                      <td className="py-4 px-6 text-gray-700 font-medium text-sm">
+                        {feature}
+                      </td>
+                      <td className="py-4 px-6 text-center">
+                        {renderCheckOrDash(idx === 0)}
+                      </td>
+                      <td className="py-4 px-6 text-center">
+                        {renderCheckOrDash(idx < 2)}
+                      </td>
+                      <td className="py-4 px-6 text-center">
+                        {renderCheckOrDash(true)}
+                      </td>
+                      <td className="py-4 px-6 text-center">
+                        {renderCheckOrDash(true)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-[#FAF9F5] relative z-10">
+      <section className="pt-12 pb-16 bg-[#FAF9F5] relative z-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="text-3xl font-medium tracking-tight text-gray-900 font-serif">Pricing Questions</h2>

@@ -84,9 +84,12 @@ export function PrivacyContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-xs font-semibold text-emerald-700 mb-6 border border-emerald-100/80">
-              <Shield className="w-3.5 h-3.5" /> Privacy & Trust
-            </span>
+            <div className="inline-flex items-center justify-center gap-2 mb-6 text-emerald-700">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em]">
+                Privacy & Trust
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            </div>
             <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-gray-900 mb-4">
               Privacy Policy
             </h1>

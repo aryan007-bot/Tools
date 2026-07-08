@@ -86,9 +86,12 @@ export function TermsContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 text-xs font-semibold text-cyan-700 mb-6 border border-cyan-100/80">
-              <BookOpen className="w-3.5 h-3.5" /> Legal Agreement
-            </span>
+            <div className="inline-flex items-center justify-center gap-2 mb-6 text-cyan-700">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em]">
+                Legal Agreement
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+            </div>
             <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-gray-900 mb-4">
               Terms of Service
             </h1>
@@ -500,9 +503,12 @@ export function TermsContent() {
               <div className="absolute inset-0 bg-white/5 opacity-20 pointer-events-none" />
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="max-w-md">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-bold uppercase tracking-wider mb-3">
-                    Limited Offer
-                  </span>
+                  <div className="flex items-center gap-1.5 mb-3">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
+                      Limited Offer
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  </div>
                   <p className="text-sm sm:text-base font-semibold leading-relaxed">
                     Get a complimentary AI audit to identify automation opportunities, performance gaps, and cost-saving optimizations across your existing systems.
                   </p>
