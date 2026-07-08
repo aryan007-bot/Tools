@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Create tests, quizzes, and question papers automatically with AI-powered generation, difficulty scaling, and PDF export.",
 };
 
-const tool = getToolBySlug("test-generator")!;
+const tool = getToolBySlug("text-generator")!;
 
 const features = [
   { iconName: "FileQuestion", title: "Question Generation", description: "AI creates diverse question types — MCQ, short answer, true/false, fill-in-the-blank — from any topic." },
