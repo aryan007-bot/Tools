@@ -266,7 +266,7 @@ export default function PricingPage() {
       <section className="pt-12 pb-6 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-medium tracking-tight text-gray-900 font-serif">Compare plans & features</h2>
+            <h2 className="text-3xl font-medium tracking-tight text-gray-900 font-serif">Compare plans &amp; features</h2>
           </div>
 
           <div className="overflow-hidden bg-white border border-gray-200/50 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
@@ -275,7 +275,7 @@ export default function PricingPage() {
                 <thead className="bg-[#FAF9F5]/40 border-b border-gray-200/60">
                   <tr>
                     <th className="py-5 px-6 font-bold text-slate-400 text-xs uppercase tracking-widest w-[32%]">
-                      Plans & Features
+                      Plans &amp; Features
                     </th>
                     {pricingTiers.map(t => (
                       <th key={t.id} className="py-5 px-6 text-center w-[17%]">

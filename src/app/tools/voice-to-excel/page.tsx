@@ -266,7 +266,7 @@ export default function VoiceToExcelKiraPage() {
                   </div>
                   <div className="absolute top-4 left-4 w-8 h-8 bg-[#9D7BFE] text-white rounded flex items-center justify-center text-xs">📦</div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Inventory & Stock</h4>
+               <h4 className="font-bold text-[#1F2937] text-sm">Inventory &amp; Stock</h4>
                <p className="text-xs text-gray-500 leading-relaxed">Walk through your warehouse and speak your stock counts. Automatically organize by SKU, quantity, and location.</p>
             </div>
 
@@ -280,7 +280,7 @@ export default function VoiceToExcelKiraPage() {
                   </div>
                   <div className="absolute top-4 left-4 w-8 h-8 bg-[#0AEB9A] text-[#1F2937] rounded flex items-center justify-center text-xs">💰</div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Expenses & Receipts</h4>
+               <h4 className="font-bold text-[#1F2937] text-sm">Expenses &amp; Receipts</h4>
                <p className="text-xs text-gray-500 leading-relaxed">Dictate receipt totals, vendors, and tax amounts. Let AI structure them into a perfect monthly expense report.</p>
             </div>
 

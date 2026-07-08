@@ -277,7 +277,7 @@ export default function FeeCollectorKiraPage() {
                <div className="h-32 bg-[#3b82f6]/10 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
                   <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🎓</div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Tuition & Core Fees</h4>
+               <h4 className="font-bold text-[#1F2937] text-sm">Tuition &amp; Core Fees</h4>
                <p className="text-xs text-gray-500 leading-relaxed">Set up recurring billing, installment plans, and family discounts automatically.</p>
             </div>
 
@@ -286,7 +286,7 @@ export default function FeeCollectorKiraPage() {
                <div className="h-32 bg-[#0AEB9A]/10 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
                   <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🚌</div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Transport & Add-ons</h4>
+               <h4 className="font-bold text-[#1F2937] text-sm">Transport &amp; Add-ons</h4>
                <p className="text-xs text-gray-500 leading-relaxed">Manage route-based transport fees, canteen charges, and uniform purchases dynamically.</p>
             </div>
 
