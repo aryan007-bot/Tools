@@ -209,7 +209,7 @@ export default function FeeCollectorKiraPage() {
                      <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                   </div>
                   <div className="flex-1 bg-white p-4 font-mono text-[10px] text-gray-500 overflow-hidden relative shadow-sm">
-                     <div className="mb-2 text-[#3b82f6] font-bold">"Auto-reconcile Bank Deposits"</div>
+                     <div className="mb-2 text-[#3b82f6] font-bold">&quot;Auto-reconcile Bank Deposits&quot;</div>
                      <table className="w-full text-left mt-4">
                         <thead className="bg-gray-50 text-gray-800">
                            <tr><th>Student</th><th>Amount</th><th>Status</th></tr>

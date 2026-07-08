@@ -198,7 +198,7 @@ export default function VoiceToExcelKiraPage() {
                      <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                   </div>
                   <div className="flex-1 bg-white p-4 font-mono text-[10px] text-gray-500 overflow-hidden relative shadow-sm">
-                     <div className="mb-2 text-[#9D7BFE] font-bold">"Add 5 laptops to the inventory"</div>
+                     <div className="mb-2 text-[#9D7BFE] font-bold">&quot;Add 5 laptops to the inventory&quot;</div>
                      <table className="w-full text-left">
                         <thead className="bg-gray-50 text-gray-800">
                            <tr><th>Item</th><th>Qty</th><th>Category</th></tr>

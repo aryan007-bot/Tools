@@ -131,7 +131,7 @@ export default function VideoEditorPage() {
                  <div className="w-full h-32 bg-gray-900 rounded-lg mb-3 relative flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80)' }} />
                     <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 1, repeat: Infinity, repeatType: "reverse", duration: 2 }} className="absolute bottom-2 bg-black/70 px-3 py-1 rounded text-white text-[10px] font-medium border border-white/20">
-                       "Automatically generating smart subtitles..."
+                       &quot;Automatically generating smart subtitles...&quot;
                     </motion.div>
                  </div>
                  
