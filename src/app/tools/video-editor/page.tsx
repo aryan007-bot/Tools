@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { getToolBySlug } from "@/lib/constants/tools";
-import { CTA } from "@/components/homepage/cta";
-import { Testimonials } from "@/components/homepage/testimonials";
 
 export default function VideoEditorPage() {
   const tool = getToolBySlug("video-editor");
