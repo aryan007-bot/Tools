@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Complete fee management for schools and institutes with payment tracking, reminders, reports, and analytics.",
 };
 
-const tool = getToolBySlug("fee-collection")!;
+const tool = getToolBySlug("fee-collector")!;
 
 const features = [
   { iconName: "Wallet", title: "Fee Tracking", description: "Complete fee structure management with custom categories, installments, and due date tracking." },
