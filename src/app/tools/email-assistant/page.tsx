@@ -179,7 +179,7 @@ export default function EmailAssistantKiraPage() {
            Professionals do not need more typing. They need a <span className="inline-block bg-[#8b5cf6]/20 text-[#8b5cf6] px-2">system.</span>
          </h2>
          <p className="text-[#6B7280] text-sm md:text-base max-w-[700px] leading-relaxed mb-12">
-           Staring at a blank compose window is slow, stressful, and soul-crushing. ToolStack replaces writer's block and endless proofreading with a single AI-driven workflow that drafts, refines, and perfectly tones your emails instantly.
+           Staring at a blank compose window is slow, stressful, and soul-crushing. ToolStack replaces writer&apos;s block and endless proofreading with a single AI-driven workflow that drafts, refines, and perfectly tones your emails instantly.
          </p>
          
          {/* Pencil Scribble Graphic */}

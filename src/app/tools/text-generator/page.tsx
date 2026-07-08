@@ -248,7 +248,7 @@ export default function TextGeneratorKiraPage() {
             <div className="w-full md:w-1/2 flex flex-col gap-4">
                <h4 className="text-2xl font-serif font-bold text-[#1F2937]">Instant formatting, no Word Doc struggles</h4>
                <p className="text-[#6B7280] text-sm leading-relaxed">
-                  Stop fighting with numbering and margins. ToolStack instantly exports perfectly formatted PDFs, Word documents, or direct exports to your school's LMS with the answer key separated for easy grading.
+                  Stop fighting with numbering and margins. ToolStack instantly exports perfectly formatted PDFs, Word documents, or direct exports to your school&apos;s LMS with the answer key separated for easy grading.
                </p>
             </div>
          </div>
@@ -375,7 +375,7 @@ export default function TextGeneratorKiraPage() {
       <section className="w-full bg-[#FFFEF9] py-24 overflow-hidden flex flex-col items-center text-center">
          <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-4">Works with what<br/>you already use</h3>
          <p className="text-[#6B7280] text-xs max-w-[400px] mb-16">
-            ToolStack integrates directly with your school's LMS to push quizzes instantly.
+            ToolStack integrates directly with your school&apos;s LMS to push quizzes instantly.
          </p>
 
          <div className="relative w-full flex overflow-x-hidden">
