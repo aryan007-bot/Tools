@@ -38,4 +38,3 @@ This is the customer-facing frontend for the multi-tool SaaS platform. Built on 
 ## 🎨 Aesthetics Strategy
 The UI is strictly designed to feel highly premium. Avoid plain generic colors; instead, the `tailwind.config.ts` extends the palette, and the components heavily utilize micro-animations via `framer-motion`. Tailwind gradients (`bg-clip-text text-transparent`) are favored for hero typography.
 
-# Tools
