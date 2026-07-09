@@ -179,46 +179,130 @@ export default function EmailAssistantKiraPage() {
            Professionals do not need more typing. They need a <span className="inline-block bg-[#8b5cf6]/20 text-[#8b5cf6] px-2">system.</span>
          </h2>
          <p className="text-[#6B7280] text-sm md:text-base max-w-[700px] leading-relaxed mb-12">
-           Staring at a blank compose window is slow, stressful, and soul-crushing. ToolStack replaces writer&apos;s block and endless proofreading with a single AI-driven workflow that drafts, refines, and perfectly tones your emails instantly.
+           Staring at a blank compose window is slow, stressful, and soul-crushing. Email Assistant replaces writer&apos;s block and endless proofreading with a single AI-driven workflow that drafts, refines, and perfectly tones your emails instantly.
          </p>
          
-         {/* Pencil Scribble Graphic */}
-         <div className="relative w-full max-w-[600px] h-32 flex justify-center items-center">
-            <svg className="w-full h-full" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M50,80 Q100,20 150,90 T250,30 T350,100 T450,40 T550,70" stroke="#1F2937" strokeWidth="3" strokeLinecap="round" strokeDasharray="6 6" />
-               <path d="M120,80 Q160,10 200,90 T300,20 T400,100 T500,40" stroke="#1F2937" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-            </svg>
-            <div className="absolute right-8 top-8 -rotate-12 text-5xl">✏️</div>
-            <div className="absolute left-8 bottom-4 rotate-12 text-4xl opacity-80">〰️</div>
+         {/* Animated Transformation Graphic */}
+         <div className="relative w-full max-w-[500px] mt-10">
+            <div className="w-full bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-4 md:p-6 flex flex-col gap-4">
+               
+               {/* Incoming Mail */}
+               <motion.div 
+                  className="w-[90%] md:w-[85%] bg-gray-50 border border-gray-200 rounded-2xl rounded-tl-sm p-4 text-left"
+                  animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -10] }}
+                  transition={{ duration: 8, repeat: Infinity, times: [0, 0.1, 0.9, 1] }}
+               >
+                  <div className="flex items-center gap-2 mb-2">
+                     <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px]">👤</div>
+                     <span className="text-xs font-bold text-gray-700">Important Client</span>
+                     <span className="text-[10px] text-gray-400 ml-auto">10:42 AM</span>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                     Hi Team, we need to push the launch to next Thursday. Can you let me know if that works for your schedule?
+                  </p>
+               </motion.div>
+
+               {/* AI Processing Magic */}
+               <div className="relative h-10 w-full flex justify-end pr-[45%]">
+                  <motion.div 
+                     className="w-0.5 h-full bg-gradient-to-b from-gray-200 to-[#8b5cf6]"
+                     animate={{ opacity: [0, 1, 1, 0] }}
+                     transition={{ duration: 8, repeat: Infinity, times: [0, 0.2, 0.9, 1] }}
+                  />
+                  <motion.div 
+                     className="absolute top-1/2 -translate-y-1/2 right-[calc(45%-14px)] w-7 h-7 bg-white border border-[#8b5cf6]/30 shadow-md rounded-full flex items-center justify-center text-xs z-10"
+                     animate={{ 
+                        rotate: 360, 
+                        scale: [0, 1, 1, 0],
+                        opacity: [0, 1, 1, 0]
+                     }}
+                     transition={{ duration: 8, repeat: Infinity, times: [0, 0.2, 0.9, 1] }}
+                  >
+                     ✨
+                  </motion.div>
+                  <motion.div 
+                     className="absolute top-1/2 -translate-y-1/2 right-[calc(45%+24px)] bg-[#8b5cf6]/10 text-[#8b5cf6] text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap"
+                     animate={{ opacity: [0, 0, 1, 0, 0] }}
+                     transition={{ duration: 8, repeat: Infinity, times: [0, 0.2, 0.3, 0.45, 1] }}
+                  >
+                     AI Drafting Reply...
+                  </motion.div>
+               </div>
+
+               {/* AI Reply Draft */}
+               <motion.div 
+                  className="w-[90%] md:w-[85%] self-end bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] text-white rounded-2xl rounded-tr-sm p-4 text-left shadow-[0_10px_30px_rgba(139,92,246,0.3)] relative"
+                  animate={{ opacity: [0, 0, 0, 1, 1, 0], y: [10, 10, 10, 0, 0, -10] }}
+                  transition={{ duration: 8, repeat: Infinity, times: [0, 0.4, 0.45, 0.55, 0.9, 1] }}
+               >
+                  <div className="flex items-center gap-2 mb-2 border-b border-white/20 pb-2">
+                     <div className="w-5 h-5 rounded flex items-center justify-center text-[10px] bg-white/20">🪄</div>
+                     <span className="text-xs font-bold tracking-wide">AI Auto-Draft</span>
+                     <div className="ml-auto flex gap-1.5">
+                        <button className="bg-white/20 hover:bg-white/30 text-[9px] px-2 py-0.5 rounded uppercase font-bold tracking-wider">Edit</button>
+                        <button className="bg-white text-[#8b5cf6] text-[9px] px-2 py-0.5 rounded uppercase font-bold tracking-wider shadow-sm">Send</button>
+                     </div>
+                  </div>
+                  <p className="text-sm text-white/95 leading-relaxed">
+                     Absolutely! Next Thursday works perfectly for our team. I have updated our timeline accordingly. Let us know if you need anything else before then.
+                  </p>
+               </motion.div>
+               
+            </div>
          </div>
       </section>
 
       {/* 3. ZIG-ZAG SECTION */}
       <section className="w-full bg-[#FFFEF9] py-20 flex flex-col items-center px-6">
          <h3 className="text-[2rem] font-serif text-[#1F2937] text-center mb-24 max-w-[600px] leading-[1.2]">
-            ToolStack replaces email anxiety with a single automated drafting engine.
+            Email Assistant replaces email anxiety with a single automated drafting engine.
          </h3>
 
          {/* Feature 1 */}
          <div className="w-full max-w-[1000px] flex flex-col md:flex-row items-center gap-16 mb-32">
-            <div className="w-full md:w-1/2 relative">
-               <div className="w-full aspect-[4/3] bg-[#8b5cf6]/20 rounded-2xl border-2 border-[#8b5cf6] p-6 flex flex-col">
-                  <div className="w-full h-8 bg-white rounded-t-md border-b border-gray-100 flex items-center px-3 gap-2">
-                     <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                     <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                  </div>
-                  <div className="flex-1 bg-white p-4 text-[11px] text-gray-500 overflow-hidden relative shadow-sm font-sans">
-                     <div className="mb-2 text-[#8b5cf6] font-bold">Prompt: Tell the team the release is delayed to Friday.</div>
-                     <div className="mt-4 p-3 bg-gray-50 border border-gray-100 rounded">
-                        <span className="font-bold text-gray-800">Subject: Update on Q3 Release Timeline</span><br/><br/>
-                        Hi Team,<br/><br/>
-                        I wanted to provide a quick update on our Q3 release. To ensure we have adequate time for final QA, we are pushing the deployment to this Friday.<br/><br/>
-                        Thanks for your hard work,<br/>
-                        Alex
+            <div className="w-full md:w-1/2 relative h-[350px] md:h-[400px]">
+               <div className="absolute inset-0 bg-gradient-to-br from-[#1a1130] to-gray-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                  <motion.div 
+                     className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#8b5cf6] rounded-full mix-blend-screen filter blur-[80px] opacity-30" 
+                     animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
+                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+               </div>
+               
+               <div className="absolute inset-0 flex flex-col p-6 z-10 justify-center">
+                  <motion.div 
+                     className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
+                     initial={{ y: 20, opacity: 0 }}
+                     whileInView={{ y: 0, opacity: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.5 }}
+                  >
+                     <div className="w-full h-8 bg-black/40 flex items-center px-3 gap-2">
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                      </div>
-                     <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#8b5cf6] rounded-full flex items-center justify-center text-4xl text-white shadow-xl rotate-12">✨</div>
-                  </div>
+                     <div className="p-4 flex flex-col gap-3">
+                        <div className="text-purple-300 text-xs font-mono mb-2 flex items-center gap-2">
+                           <span className="animate-pulse">▶</span> Prompt: Tell the team the release is delayed to Friday.
+                        </div>
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-xs text-gray-300 leading-relaxed font-sans">
+                           <span className="font-bold text-white mb-2 block">Subject: Update on Q3 Release Timeline</span>
+                           Hi Team,<br/><br/>
+                           I wanted to provide a quick update on our Q3 release. To ensure we have adequate time for final QA, we are pushing the deployment to this Friday.<br/><br/>
+                           Thanks for your hard work,<br/>
+                           Alex
+                        </div>
+                     </div>
+                  </motion.div>
+                  <motion.div 
+                     className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#8b5cf6] rounded-full flex items-center justify-center text-3xl text-white shadow-[0_0_30px_rgba(139,92,246,0.5)] border-2 border-white/20"
+                     animate={{ rotate: 360 }}
+                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  >
+                     ✨
+                  </motion.div>
                </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-4">
@@ -231,32 +315,42 @@ export default function EmailAssistantKiraPage() {
 
          {/* Feature 2 */}
          <div className="w-full max-w-[1000px] flex flex-col md:flex-row-reverse items-center gap-16 mb-24">
-            <div className="w-full md:w-1/2 relative">
-               <div className="w-full aspect-[4/3] bg-[#ec4899]/10 rounded-2xl border-2 border-[#ec4899] p-6 relative overflow-hidden flex items-center justify-center">
+            <div className="w-full md:w-1/2 relative h-[350px] md:h-[400px]">
+               <div className="absolute inset-0 bg-gradient-to-br from-[#ec4899]/10 to-transparent rounded-3xl overflow-hidden border border-[#ec4899]/20 flex items-center justify-center">
                   <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                  <div className="bg-white p-6 rounded-xl shadow-xl z-10 w-[80%] flex flex-col gap-4 relative">
+                  
+                  <motion.div 
+                     className="bg-white p-6 rounded-2xl shadow-xl z-10 w-[80%] flex flex-col gap-4 relative border border-gray-100"
+                     initial={{ scale: 0.9, opacity: 0 }}
+                     whileInView={{ scale: 1, opacity: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.5 }}
+                  >
                      <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-                        <span className="text-sm font-bold text-gray-800">Tone Adjuster</span>
-                        <span className="text-xl">🎚️</span>
+                        <span className="text-sm font-bold text-gray-800 flex items-center gap-2"><span className="text-xl">🎚️</span> Tone Adjuster</span>
                      </div>
-                     <div className="flex flex-col gap-2">
-                        <button className="w-full py-2 bg-gray-50 border border-gray-200 text-gray-600 text-xs font-bold rounded hover:bg-gray-100 text-left px-3">😊 Friendly</button>
-                        <button className="w-full py-2 bg-[#ec4899] border border-[#ec4899] text-white text-xs font-bold rounded shadow-sm text-left px-3 flex justify-between">
-                           <span>👔 Professional</span> <span>✓</span>
-                        </button>
-                        <button className="w-full py-2 bg-gray-50 border border-gray-200 text-gray-600 text-xs font-bold rounded hover:bg-gray-100 text-left px-3">🚀 Persuasive</button>
+                     <div className="flex flex-col gap-3">
+                        <div className="w-full py-3 bg-gray-50 border border-gray-100 text-gray-500 text-xs font-bold rounded-xl text-left px-4 hover:bg-gray-100 transition-colors cursor-pointer">😊 Friendly</div>
+                        <motion.div 
+                           className="w-full py-3 bg-gradient-to-r from-[#ec4899] to-pink-500 text-white text-xs font-bold rounded-xl shadow-md text-left px-4 flex justify-between items-center relative overflow-hidden group cursor-pointer"
+                           whileHover={{ scale: 1.02 }}
+                        >
+                           <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+                           <span className="relative z-10">👔 Professional</span> 
+                           <motion.span className="relative z-10 bg-white/20 w-5 h-5 rounded-full flex items-center justify-center" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }}>✓</motion.span>
+                        </motion.div>
+                        <div className="w-full py-3 bg-gray-50 border border-gray-100 text-gray-500 text-xs font-bold rounded-xl text-left px-4 hover:bg-gray-100 transition-colors cursor-pointer">🚀 Persuasive</div>
                      </div>
-                  </div>
+                  </motion.div>
                </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-4">
                <h4 className="text-2xl font-serif font-bold text-[#1F2937]">Dynamic tone adjustment, effortless rewriting</h4>
                <p className="text-[#6B7280] text-sm leading-relaxed">
-                  Too casual? Too aggressive? Select a tone and let ToolStack rewrite your draft instantly. Ensure every communication represents your professional best.
+                  Too casual? Too aggressive? Select a tone and let Email Assistant rewrite your draft instantly. Ensure every communication represents your professional best.
                </p>
             </div>
          </div>
-
       </section>
 
       {/* 4. GRID SECTION */}
@@ -271,144 +365,115 @@ export default function EmailAssistantKiraPage() {
          <div className="w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Card 1 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-[#8b5cf6]/10 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🤝</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-[#8b5cf6]/10 to-purple-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-[#8b5cf6]/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-[#8b5cf6]/30 text-[#8b5cf6] text-2xl"
+                     whileHover={{ scale: 1.1, rotate: -10 }}
+                  >
+                     🤝
+                  </motion.div>
+                  <motion.div 
+                     className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%]"
+                     animate={{ backgroundPosition: ["-100% 0%", "200% 0%"] }}
+                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  />
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Cold Outreach</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Generate highly personalized cold emails that grab attention and dramatically improve reply rates.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Cold Outreach</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Generate highly personalized cold emails that grab attention and dramatically improve reply rates.</p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-[#ec4899]/10 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">📅</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-[#ec4899]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-[#ec4899]/10 to-pink-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-[#ec4899]/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-[#ec4899]/30 text-[#ec4899] text-2xl"
+                     animate={{ y: [-5, 5, -5] }}
+                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                     📅
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Follow-ups</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Automate polite but persistent follow-ups after meetings, pitches, or ignored emails.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Follow-ups</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Automate polite but persistent follow-ups after meetings, pitches, or ignored emails.</p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-orange-50 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">📢</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-orange-500/10 to-orange-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-orange-500/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-orange-500/30 text-orange-500 text-2xl"
+                     whileHover={{ scale: 1.1 }}
+                  >
+                     📢
+                  </motion.div>
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#f97316 1px, transparent 1px)', backgroundSize: '8px 8px' }} />
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Newsletters</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Draft engaging weekly digests and product updates with AI-optimized subject lines.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Newsletters</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Draft engaging weekly digests and product updates with AI-optimized subject lines.</p>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-blue-50 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🏢</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-blue-500/10 to-blue-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-blue-500/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-blue-500/30 text-blue-500 text-2xl"
+                     animate={{ rotate: [0, 10, -10, 0] }}
+                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", repeatDelay: 3 }}
+                  >
+                     🏢
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Internal Comms</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Communicate policy changes and project updates clearly and professionally to your team.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Internal Comms</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Communicate policy changes and project updates clearly and professionally to your team.</p>
             </div>
 
             {/* Card 5 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-green-50 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🎧</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-green-500/10 to-green-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-green-500/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-green-500/30 text-green-500 text-2xl"
+                     animate={{ scale: [1, 1.05, 1] }}
+                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                     🎧
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Support Responses</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Generate empathetic, accurate replies to customer support tickets in seconds.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Support Responses</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Generate empathetic, accurate replies to customer support tickets in seconds.</p>
             </div>
 
             {/* Card 6 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-gray-100 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">⚡</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-gray-200 to-gray-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-gray-300">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-gray-300 text-gray-600 text-2xl relative overflow-hidden"
+                     whileHover={{ scale: 1.1 }}
+                  >
+                     ⚡
+                     <motion.div 
+                        className="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent opacity-50"
+                        animate={{ y: ["100%", "-100%"] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                     />
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Send Scheduling</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Automatically calculate and schedule sends for the exact moment your recipient is most likely to open.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Send Scheduling</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Automatically calculate and schedule sends for the exact moment your recipient is most likely to open.</p>
             </div>
 
          </div>
       </section>
 
-      {/* 5. COMPLIANCE SECTION */}
-      <section className="w-full bg-[#FFFEF9] py-24 flex flex-col items-center px-6 text-center">
-         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-16">Built for business. Compliant by design.</h3>
-         
-         <div className="flex flex-wrap justify-center gap-12 max-w-[900px]">
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-[#8b5cf6] rounded-xl shadow-lg -rotate-3 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">⚙️</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">Tested by Enterprises</h5>
-               <p className="text-[10px] text-gray-500">Built to handle high-volume communications for enterprise teams.</p>
-            </div>
-            
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-[#ec4899] rounded-xl shadow-lg rotate-3 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">🔍</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">Data Stays Yours</h5>
-               <p className="text-[10px] text-gray-500">Your email drafts and contacts are never used to train our models.</p>
-            </div>
-            
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-orange-400 rounded-xl shadow-lg -rotate-6 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">🔒</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">SOC2 Compliant</h5>
-               <p className="text-[10px] text-gray-500">Banking-level security ensuring your communications remain entirely private.</p>
-            </div>
-            
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-blue-500 rounded-xl shadow-lg rotate-6 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">✅</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">GDPR Ready</h5>
-               <p className="text-[10px] text-gray-500">Fully compliant with international communication privacy laws.</p>
-            </div>
-         </div>
-
-         <div className="mt-16 pt-8 border-t border-gray-100 flex items-center gap-6">
-            <span className="text-xs text-gray-400 font-medium">Security and privacy you can trust</span>
-            <div className="flex gap-2">
-               <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px]">🛡️</div>
-               <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-[10px]">🔐</div>
-               <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-[10px]">✓</div>
-            </div>
-         </div>
-      </section>
-
-      {/* 6. INTEGRATIONS MARQUEE */}
-      <section className="w-full bg-[#FFFEF9] py-24 overflow-hidden flex flex-col items-center text-center">
-         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-4">Works with what<br/>you already use</h3>
-         <p className="text-[#6B7280] text-xs max-w-[400px] mb-16">
-            ToolStack integrates directly with your existing email providers and CRM software.
-         </p>
-
-         <div className="relative w-full flex overflow-x-hidden">
-            <motion.div 
-               animate={{ x: ["0%", "-50%"] }} 
-               transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-               className="flex gap-8 whitespace-nowrap min-w-max px-4"
-            >
-               {/* Marquee Items x2 for seamless loop */}
-               {[...Array(2)].map((_, j) => (
-                  <div key={j} className="flex gap-8">
-                     {["Gmail", "Outlook", "HubSpot", "Salesforce", "Mailchimp", "SendGrid", "Apollo", "Slack"].map((logo, i) => (
-                        <div key={i} className={`w-40 h-20 bg-white border border-gray-200 shadow-sm flex items-center justify-center transform ${i%2===0 ? 'rotate-3' : '-rotate-2'} relative overflow-hidden`}>
-                           {/* Graph Paper Background */}
-                           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
-                           <span className="font-bold text-gray-700 text-sm relative z-10 flex items-center gap-2">
-                              <span className="text-[#8b5cf6]">🟪</span> {logo}
-                           </span>
-                        </div>
-                     ))}
-                  </div>
-               ))}
-            </motion.div>
-         </div>
-      </section>
-
-      {/* 7. PRE-FOOTER SHAPES & CTA */}
+      {/* 5. PRE-FOOTER SHAPES & CTA */}
       <section className="w-full bg-[#FFFEF9] pt-24 pb-0 flex flex-col items-center text-center relative">
-         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-8">See how ToolStack works</h3>
+         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-8">Try Email Assistant today</h3>
          <div className="flex gap-4 mb-16 relative z-20">
             <button className="bg-[#1F2937] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-black">Start for free</button>
             <button className="bg-white border border-gray-200 text-gray-700 px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-50">Book a demo</button>
@@ -443,28 +508,6 @@ export default function EmailAssistantKiraPage() {
             <div className="absolute bottom-52 right-1/4 text-4xl opacity-80">🌀</div>
          </div>
       </section>
-
-      {/* 8. FOOTER */}
-      <footer className="w-full bg-[#1a1130] pt-12 pb-24 px-6 flex flex-col items-center relative z-20">
-         <div className="w-full max-w-[1200px] flex justify-between text-[10px] text-gray-400 mb-20 uppercase tracking-widest font-bold">
-            <div className="flex gap-4">
-               <span>X</span>
-               <span>In</span>
-               <span>Yt</span>
-            </div>
-            <div className="flex gap-4">
-               <span>Terms</span>
-               <span>Privacy</span>
-               <span>Contact</span>
-            </div>
-         </div>
-         
-         <div className="w-full max-w-[1200px] flex justify-center">
-            <h1 className="text-[6rem] md:text-[14rem] font-serif font-black text-[#8b5cf6] leading-none tracking-tighter mix-blend-screen opacity-90">
-               ToolStack
-            </h1>
-         </div>
-      </footer>
 
     </div>
   );

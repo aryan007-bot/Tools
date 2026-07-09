@@ -180,46 +180,149 @@ export default function TextGeneratorKiraPage() {
            Educators do not need more grading fatigue. They need a <span className="inline-block bg-[#f97316]/20 text-[#f97316] px-2">system.</span>
          </h2>
          <p className="text-[#6B7280] text-sm md:text-base max-w-[700px] leading-relaxed mb-12">
-           Writing balanced, syllabus-aligned question papers takes hours of weekend time. ToolStack replaces the endless scrolling through textbooks and manual formatting with an instant AI generation engine that creates rigorous exams and perfect answer keys.
+           Writing balanced, syllabus-aligned question papers takes hours of weekend time. Our Test Generator replaces the endless scrolling through textbooks and manual formatting with an instant AI generation engine that creates rigorous exams and perfect answer keys.
          </p>
          
-         {/* Pencil Scribble Graphic */}
-         <div className="relative w-full max-w-[600px] h-32 flex justify-center items-center">
-            <svg className="w-full h-full" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M50,80 Q100,20 150,90 T250,30 T350,100 T450,40 T550,70" stroke="#1F2937" strokeWidth="3" strokeLinecap="round" strokeDasharray="6 6" />
-               <path d="M120,80 Q160,10 200,90 T300,20 T400,100 T500,40" stroke="#1F2937" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-            </svg>
-            <div className="absolute right-8 top-8 -rotate-12 text-5xl">✏️</div>
-            <div className="absolute left-8 bottom-4 rotate-12 text-4xl opacity-80">〰️</div>
+         {/* Animated Transformation Graphic */}
+         <div className="relative w-full max-w-[600px] h-32 flex justify-center items-center mt-4">
+            <div className="w-full h-full flex items-center justify-between px-16 relative z-10">
+               {/* Left: Document/Book */}
+               <motion.div 
+                  className="w-16 h-20 bg-white rounded-lg shadow-md border border-gray-200 flex flex-col items-center py-3 gap-1.5 z-10"
+                  animate={{ y: [-5, 5, -5] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+               >
+                  <div className="w-10 h-1 bg-gray-200 rounded-full" />
+                  <div className="w-8 h-1 bg-gray-200 rounded-full" />
+                  <div className="w-10 h-1 bg-gray-200 rounded-full" />
+                  <div className="text-xl mt-1">📚</div>
+               </motion.div>
+               
+               {/* Center: Processing Arrow */}
+               <div className="flex flex-col items-center gap-2">
+                  <div className="flex gap-1 mb-1">
+                     <motion.div className="w-2 h-2 bg-[#f97316] rounded-full" animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0 }} />
+                     <motion.div className="w-2 h-2 bg-[#f97316] rounded-full" animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }} />
+                     <motion.div className="w-2 h-2 bg-[#f97316] rounded-full" animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }} />
+                  </div>
+                  <motion.div 
+                     className="text-[#f97316] text-2xl"
+                     animate={{ x: [0, 10, 0] }}
+                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                     ⟶
+                  </motion.div>
+               </div>
+               
+               {/* Right: Perfect Exam */}
+               <motion.div 
+                  className="w-16 h-20 bg-white rounded-lg shadow-lg border border-[#f97316]/30 flex flex-col items-center py-2 gap-1 z-10 relative overflow-hidden"
+                  animate={{ y: [5, -5, 5] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+               >
+                  <div className="absolute top-0 w-full h-1 bg-[#f97316]" />
+                  <div className="w-10 h-1 bg-gray-200 rounded-full mt-2" />
+                  <div className="flex gap-1 mt-1 w-full px-3">
+                     <div className="w-2 h-2 rounded-full border border-[#f97316] flex-shrink-0" />
+                     <div className="w-full h-1.5 bg-gray-100 rounded-full mt-0.5" />
+                  </div>
+                  <div className="flex gap-1 w-full px-3">
+                     <div className="w-2 h-2 rounded-full border border-gray-300 flex-shrink-0" />
+                     <div className="w-full h-1.5 bg-gray-100 rounded-full mt-0.5" />
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 text-lg">A+</div>
+               </motion.div>
+            </div>
+            
+            {/* Background elements */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+               <motion.div 
+                  className="w-[300px] h-10 bg-gradient-to-r from-transparent via-[#f97316] to-transparent blur-xl rounded-full"
+                  animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.9, 1.1, 0.9] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+               />
+            </div>
          </div>
       </section>
 
       {/* 3. ZIG-ZAG SECTION */}
       <section className="w-full bg-[#FFFEF9] py-20 flex flex-col items-center px-6">
          <h3 className="text-[2rem] font-serif text-[#1F2937] text-center mb-24 max-w-[600px] leading-[1.2]">
-            ToolStack replaces late-night test writing with intelligent automation.
+            Test Generator replaces late-night test writing with intelligent automation.
          </h3>
 
          {/* Feature 1 */}
          <div className="w-full max-w-[1000px] flex flex-col md:flex-row items-center gap-16 mb-32">
-            <div className="w-full md:w-1/2 relative">
-               <div className="w-full aspect-[4/3] bg-[#f97316]/20 rounded-2xl border-2 border-[#f97316] p-6 flex flex-col">
-                  <div className="w-full h-8 bg-white rounded-t-md border-b border-gray-100 flex items-center px-3 gap-2">
-                     <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                     <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                  </div>
-                  <div className="flex-1 bg-white p-4 text-[11px] text-gray-500 overflow-hidden relative shadow-sm font-sans flex flex-col gap-2">
-                     <div className="text-[#f97316] font-bold">Generate 3 MCQs on Photosynthesis (Hard)</div>
-                     <div className="bg-gray-50 border border-gray-100 p-2 rounded">
-                        <div className="font-bold text-gray-800">1. During the light-dependent reactions...</div>
-                        <div className="pl-4 mt-1">A) Carbon fixation occurs</div>
-                        <div className="pl-4 mt-1 bg-green-100 text-green-800 font-bold">B) ATP and NADPH are produced ✓</div>
-                        <div className="pl-4 mt-1">C) Glucose is synthesized</div>
-                     </div>
-                     <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#f97316] rounded-full flex items-center justify-center text-4xl text-white shadow-xl rotate-12">📚</div>
-                  </div>
+            <div className="w-full md:w-1/2 relative h-[350px] md:h-[400px]">
+               {/* Background Layer */}
+               <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/20 to-orange-50 rounded-3xl overflow-hidden shadow-2xl border border-[#f97316]/10">
+                  {/* Glowing Orbs */}
+                  <motion.div 
+                     className="absolute top-[-20%] left-[-20%] w-[300px] h-[300px] bg-[#f97316] rounded-full mix-blend-multiply filter blur-[80px] opacity-40" 
+                     animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3], x: [0, 50, 0] }}
+                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <motion.div 
+                     className="absolute bottom-[-20%] right-[-20%] w-[250px] h-[250px] bg-yellow-400 rounded-full mix-blend-multiply filter blur-[60px] opacity-30" 
+                     animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2], y: [0, -40, 0] }}
+                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                  />
                </div>
+
+               {/* Main Glass Card */}
+               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10">
+                  <motion.div 
+                     className="w-full max-w-[340px] bg-white/60 backdrop-blur-xl border border-white rounded-2xl shadow-xl flex flex-col overflow-hidden"
+                     initial={{ y: 20, opacity: 0 }}
+                     whileInView={{ y: 0, opacity: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.5 }}
+                  >
+                     <div className="w-full bg-white/80 p-3 border-b border-gray-100 flex items-center justify-between">
+                        <span className="text-xs font-bold text-[#f97316]">Difficulty Scaling</span>
+                        <div className="flex gap-1">
+                           <div className="w-2 h-2 rounded-full bg-red-400" />
+                           <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                           <div className="w-2 h-2 rounded-full bg-green-400" />
+                        </div>
+                     </div>
+                     <div className="p-4 flex flex-col gap-3 relative">
+                        <motion.div 
+                           className="w-full p-3 bg-white rounded-lg border border-gray-100 shadow-sm relative overflow-hidden"
+                           whileHover={{ scale: 1.02 }}
+                        >
+                           <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-400" />
+                           <p className="text-[10px] font-bold text-gray-800">1. Basic Recall (Easy)</p>
+                           <p className="text-[9px] text-gray-500 mt-1">What is the primary function of mitochondria?</p>
+                        </motion.div>
+                        <motion.div 
+                           className="w-full p-3 bg-white rounded-lg border border-[#f97316]/30 shadow-md relative overflow-hidden transform scale-[1.02]"
+                        >
+                           <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#f97316]" />
+                           <p className="text-[10px] font-bold text-gray-800">2. Application (Hard)</p>
+                           <motion.p 
+                              className="text-[9px] text-gray-600 mt-1"
+                           >
+                              If a toxin blocks the electron transport chain, how does it affect cellular respiration overall?
+                           </motion.p>
+                           <motion.div 
+                              className="w-full h-full absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                              animate={{ x: ["-100%", "200%"] }}
+                              transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }}
+                           />
+                        </motion.div>
+                     </div>
+                  </motion.div>
+               </div>
+               
+               {/* Floating Icon */}
+               <motion.div 
+                  className="absolute -right-4 top-1/4 w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center text-3xl z-20 border border-gray-100"
+                  animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+               >
+                  🧠
+               </motion.div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-4">
                <h4 className="text-2xl font-serif font-bold text-[#1F2937]">Dynamic difficulty scaling, not repetitive questions</h4>
@@ -231,28 +334,87 @@ export default function TextGeneratorKiraPage() {
 
          {/* Feature 2 */}
          <div className="w-full max-w-[1000px] flex flex-col md:flex-row-reverse items-center gap-16 mb-24">
-            <div className="w-full md:w-1/2 relative">
-               <div className="w-full aspect-[4/3] bg-[#f59e0b]/10 rounded-2xl border-2 border-[#f59e0b] p-6 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-                  <div className="bg-white p-6 rounded-xl shadow-xl z-10 w-[80%] flex flex-col gap-4 relative text-center">
-                     <div className="text-4xl mb-2">📄</div>
-                     <h3 className="font-bold text-gray-800">Export Final Exam</h3>
-                     <div className="flex gap-2 w-full mt-2">
-                        <button className="flex-1 py-2 bg-[#f97316] text-white text-xs font-bold rounded shadow-sm">PDF Format</button>
-                        <button className="flex-1 py-2 bg-[#1F2937] text-white text-xs font-bold rounded shadow-sm">Canvas LMS</button>
+            <div className="w-full md:w-1/2 relative h-[350px] md:h-[400px]">
+               {/* Background Layer */}
+               <div className="absolute inset-0 bg-gradient-to-br from-[#1a1130] to-gray-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                  {/* Glowing Orbs */}
+                  <motion.div 
+                     className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#f97316] rounded-full mix-blend-screen filter blur-[80px] opacity-30" 
+                     animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
+                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <motion.div 
+                     className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-[#f59e0b] rounded-full mix-blend-screen filter blur-[60px] opacity-20" 
+                     animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
+                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  />
+                  
+                  {/* Grid Pattern */}
+                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+               </div>
+
+               {/* Main Centered Glass Card */}
+               <div className="absolute inset-0 flex items-center justify-center p-6 z-10">
+                  <motion.div 
+                     className="w-full max-w-[300px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-6 flex flex-col items-center relative"
+                     initial={{ scale: 0.9, opacity: 0 }}
+                     whileInView={{ scale: 1, opacity: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.5 }}
+                  >
+                     <div className="relative w-20 h-24 bg-white rounded-lg shadow-inner mb-6 flex flex-col items-center py-4 px-2 overflow-hidden">
+                        <div className="w-12 h-1.5 bg-gray-200 rounded-full mb-2" />
+                        <div className="w-10 h-1.5 bg-gray-200 rounded-full mb-2" />
+                        <div className="w-14 h-1.5 bg-gray-200 rounded-full mb-2" />
+                        <div className="w-8 h-1.5 bg-gray-200 rounded-full" />
+                        
+                        <motion.div 
+                           className="absolute inset-0 bg-[#f97316]/10 flex items-center justify-center backdrop-blur-[1px]"
+                           initial={{ opacity: 0 }}
+                           whileInView={{ opacity: 1 }}
+                           transition={{ delay: 1, duration: 0.5 }}
+                        >
+                           <motion.div
+                              initial={{ scale: 3, opacity: 0, rotate: -20 }}
+                              whileInView={{ scale: 1, opacity: 1, rotate: -10 }}
+                              transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
+                              className="text-3xl font-black text-[#f97316] border-4 border-[#f97316] rounded-full w-14 h-14 flex items-center justify-center bg-white shadow-lg"
+                           >
+                              A+
+                           </motion.div>
+                        </motion.div>
                      </div>
-                     <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#0AEB9A] rounded-full shadow-lg flex items-center justify-center text-xl">✅</div>
-                  </div>
+
+                     <h5 className="text-white font-bold text-lg mb-1">Export Final Exam</h5>
+                     <p className="text-white/60 text-xs mb-6 text-center">Perfect formatting instantly</p>
+
+                     <div className="flex gap-2 w-full">
+                        <motion.button 
+                           className="flex-1 py-2.5 bg-gradient-to-r from-[#f97316] to-[#f59e0b] text-white text-[10px] font-bold rounded-lg shadow-[0_0_15px_rgba(249,115,22,0.4)] relative overflow-hidden group"
+                           whileHover={{ scale: 1.05 }}
+                           whileTap={{ scale: 0.95 }}
+                        >
+                           <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+                           PDF Format
+                        </motion.button>
+                        <motion.button 
+                           className="flex-1 py-2.5 bg-white/10 text-white text-[10px] font-bold rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
+                           whileHover={{ scale: 1.05 }}
+                           whileTap={{ scale: 0.95 }}
+                        >
+                           Canvas LMS
+                        </motion.button>
+                     </div>
+                  </motion.div>
                </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-4">
                <h4 className="text-2xl font-serif font-bold text-[#1F2937]">Instant formatting, no Word Doc struggles</h4>
                <p className="text-[#6B7280] text-sm leading-relaxed">
-                  Stop fighting with numbering and margins. ToolStack instantly exports perfectly formatted PDFs, Word documents, or direct exports to your school&apos;s LMS with the answer key separated for easy grading.
+                  Stop fighting with numbering and margins. Test Generator instantly exports perfectly formatted PDFs, Word documents, or direct exports to your school&apos;s LMS with the answer key separated for easy grading.
                </p>
             </div>
          </div>
-
       </section>
 
       {/* 4. GRID SECTION */}
@@ -267,144 +429,117 @@ export default function TextGeneratorKiraPage() {
          <div className="w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Card 1 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-[#f97316]/10 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">☑️</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-[#f97316]/10 to-orange-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-[#f97316]/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex flex-col items-center justify-center border border-[#f97316]/30 text-[#f97316]"
+                     whileHover={{ scale: 1.1, rotate: 10 }}
+                  >
+                     <div className="w-6 h-1.5 bg-[#f97316]/20 rounded-full mb-1" />
+                     <div className="w-8 h-1.5 bg-[#f97316] rounded-full mb-1" />
+                     <div className="w-5 h-1.5 bg-[#f97316]/20 rounded-full" />
+                  </motion.div>
+                  <motion.div 
+                     className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%]"
+                     animate={{ backgroundPosition: ["-100% 0%", "200% 0%"] }}
+                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  />
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Multiple Choice</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Generate rigorous MCQs with plausible distractors (wrong answers) to properly test student knowledge.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Multiple Choice</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Generate rigorous MCQs with plausible distractors (wrong answers) to properly test student knowledge.</p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-[#f59e0b]/10 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">✍️</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-[#f59e0b]/10 to-amber-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-[#f59e0b]/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex flex-col items-center justify-center border border-[#f59e0b]/30 text-[#f59e0b]"
+                     animate={{ y: [-3, 3, -3] }}
+                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                     <span className="text-2xl">✍️</span>
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Essay Prompts</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Create thought-provoking essay prompts complete with comprehensive grading rubrics.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Essay Prompts</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Create thought-provoking essay prompts complete with comprehensive grading rubrics.</p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-blue-50 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🧮</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-blue-500/10 to-blue-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-blue-500/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-blue-500/30 text-blue-500 font-bold font-serif text-xl"
+                     animate={{ rotate: [0, 360] }}
+                     transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  >
+                     ∑
+                  </motion.div>
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '8px 8px' }} />
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Math Equations</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Generate complex mathematical and physics problems with step-by-step solution keys.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Math Equations</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Generate complex mathematical and physics problems with step-by-step solution keys.</p>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-green-50 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">🌎</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-green-500/10 to-green-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-green-500/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-green-500/30 text-green-500 text-2xl"
+                     whileHover={{ scale: 1.1 }}
+                  >
+                     Aあ
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Language Tests</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Create reading comprehension passages and vocabulary quizzes in over 40 languages.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Language Tests</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Create reading comprehension passages and vocabulary quizzes in over 40 languages.</p>
             </div>
 
             {/* Card 5 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-purple-50 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">📚</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-purple-500/10 to-purple-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-purple-500/20">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex flex-col items-center justify-center border border-purple-500/30 text-purple-500"
+                     animate={{ y: [0, -5, 0] }}
+                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                     <span className="text-2xl">📚</span>
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Syllabus Matching</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Upload your curriculum or textbook chapters. AI ensures all generated questions strictly adhere to your content.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Syllabus Matching</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Upload your curriculum or textbook chapters. AI ensures all generated questions strictly adhere to your content.</p>
             </div>
 
             {/* Card 6 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
-               <div className="h-32 bg-gray-100 rounded-lg mb-2 relative overflow-hidden flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full shadow-md z-10 flex items-center justify-center text-2xl border border-gray-100">📄</div>
+            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col gap-2 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+               <div className="h-32 bg-gradient-to-br from-gray-200 to-gray-50 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center border border-gray-300">
+                  <motion.div 
+                     className="w-16 h-16 bg-white rounded-full shadow-lg z-10 flex items-center justify-center border border-gray-300 text-gray-600 text-2xl relative overflow-hidden"
+                     whileHover={{ scale: 1.1 }}
+                  >
+                     📄
+                     <motion.div 
+                        className="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent opacity-50"
+                        animate={{ y: ["100%", "-100%"] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                     />
+                  </motion.div>
                </div>
-               <h4 className="font-bold text-[#1F2937] text-sm">Instant Formats</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Export immediately to beautifully formatted PDFs, Word Docs, or directly to Canvas/Google Classroom.</p>
+               <h4 className="font-bold text-[#1F2937] text-sm relative z-10">Instant Formats</h4>
+               <p className="text-xs text-gray-500 leading-relaxed relative z-10">Export immediately to beautifully formatted PDFs, Word Docs, or directly to Canvas/Google Classroom.</p>
             </div>
 
          </div>
       </section>
 
-      {/* 5. COMPLIANCE SECTION */}
-      <section className="w-full bg-[#FFFEF9] py-24 flex flex-col items-center px-6 text-center">
-         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-16">Built for schools. Compliant by design.</h3>
-         
-         <div className="flex flex-wrap justify-center gap-12 max-w-[900px]">
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-[#f97316] rounded-xl shadow-lg -rotate-3 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">⚙️</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">Tested by Educators</h5>
-               <p className="text-[10px] text-gray-500">Built in collaboration with teachers across K-12 and university levels.</p>
-            </div>
-            
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-[#f59e0b] rounded-xl shadow-lg rotate-3 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">🔍</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">Copyright Safe</h5>
-               <p className="text-[10px] text-gray-500">Generates 100% original questions to avoid copyright infringement.</p>
-            </div>
-            
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-blue-500 rounded-xl shadow-lg -rotate-6 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">🔒</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">FERPA Ready</h5>
-               <p className="text-[10px] text-gray-500">Zero retention of any student data entered into grading rubrics.</p>
-            </div>
-            
-            <div className="flex flex-col items-center max-w-[150px]">
-               <div className="w-20 h-20 bg-green-500 rounded-xl shadow-lg rotate-6 flex items-center justify-center mb-6">
-                  <span className="text-3xl text-white">✅</span>
-               </div>
-               <h5 className="font-bold text-xs text-[#1F2937] mb-2">Accessibility Ready</h5>
-               <p className="text-[10px] text-gray-500">Exported PDFs are screen-reader friendly and fully ADA compliant.</p>
-            </div>
-         </div>
-
-         <div className="mt-16 pt-8 border-t border-gray-100 flex items-center gap-6">
-            <span className="text-xs text-gray-400 font-medium">Security and privacy you can trust</span>
-            <div className="flex gap-2">
-               <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px]">🛡️</div>
-               <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-[10px]">🔐</div>
-               <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-[10px]">✓</div>
-            </div>
-         </div>
-      </section>
-
-      {/* 6. INTEGRATIONS MARQUEE */}
-      <section className="w-full bg-[#FFFEF9] py-24 overflow-hidden flex flex-col items-center text-center">
-         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-4">Works with what<br/>you already use</h3>
-         <p className="text-[#6B7280] text-xs max-w-[400px] mb-16">
-            ToolStack integrates directly with your school&apos;s LMS to push quizzes instantly.
-         </p>
-
-         <div className="relative w-full flex overflow-x-hidden">
-            <motion.div 
-               animate={{ x: ["0%", "-50%"] }} 
-               transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-               className="flex gap-8 whitespace-nowrap min-w-max px-4"
-            >
-               {/* Marquee Items x2 for seamless loop */}
-               {[...Array(2)].map((_, j) => (
-                  <div key={j} className="flex gap-8">
-                     {["Canvas", "Schoology", "Blackboard", "Google Classroom", "Moodle", "Kahoot", "Quizlet"].map((logo, i) => (
-                        <div key={i} className={`w-40 h-20 bg-white border border-gray-200 shadow-sm flex items-center justify-center transform ${i%2===0 ? 'rotate-3' : '-rotate-2'} relative overflow-hidden`}>
-                           {/* Graph Paper Background */}
-                           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
-                           <span className="font-bold text-gray-700 text-sm relative z-10 flex items-center gap-2">
-                              <span className="text-[#f97316]">🟧</span> {logo}
-                           </span>
-                        </div>
-                     ))}
-                  </div>
-               ))}
-            </motion.div>
-         </div>
-      </section>
-
-      {/* 7. PRE-FOOTER SHAPES & CTA */}
+      {/* 5. PRE-FOOTER SHAPES & CTA */}
       <section className="w-full bg-[#FFFEF9] pt-24 pb-0 flex flex-col items-center text-center relative">
-         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-8">See how ToolStack works</h3>
+         <h3 className="text-[1.8rem] font-serif text-[#1F2937] mb-8">Try Test Generator today</h3>
          <div className="flex gap-4 mb-16 relative z-20">
             <button className="bg-[#1F2937] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-black">Start for free</button>
             <button className="bg-white border border-gray-200 text-gray-700 px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-50">Book a demo</button>
@@ -439,28 +574,6 @@ export default function TextGeneratorKiraPage() {
             <div className="absolute bottom-52 right-1/4 text-4xl opacity-80">🌀</div>
          </div>
       </section>
-
-      {/* 8. FOOTER */}
-      <footer className="w-full bg-[#1a1130] pt-12 pb-24 px-6 flex flex-col items-center relative z-20">
-         <div className="w-full max-w-[1200px] flex justify-between text-[10px] text-gray-400 mb-20 uppercase tracking-widest font-bold">
-            <div className="flex gap-4">
-               <span>X</span>
-               <span>In</span>
-               <span>Yt</span>
-            </div>
-            <div className="flex gap-4">
-               <span>Terms</span>
-               <span>Privacy</span>
-               <span>Contact</span>
-            </div>
-         </div>
-         
-         <div className="w-full max-w-[1200px] flex justify-center">
-            <h1 className="text-[6rem] md:text-[14rem] font-serif font-black text-[#f97316] leading-none tracking-tighter mix-blend-screen opacity-90">
-               ToolStack
-            </h1>
-         </div>
-      </footer>
 
     </div>
   );
