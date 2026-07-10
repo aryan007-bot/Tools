@@ -82,15 +82,25 @@ export function CTA() {
            </form>
         </div>
 
-        {/* Decorative Scribbles */}
-        <svg className="absolute -left-16 top-1/2 w-16 h-16 overflow-visible z-30" viewBox="0 0 50 50">
-           <path d="M 0 50 C 10 -10, 40 40, 50 0" fill="none" stroke="#111827" strokeWidth="3" />
+        {/* Decorative Tech Vectors */}
+        <svg className="absolute -left-16 top-1/3 w-20 h-20 overflow-visible z-30 opacity-40 text-gray-500" viewBox="0 0 100 100" fill="none">
+           <path d="M 0 50 L 50 50 L 70 30 L 100 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+           <path d="M 50 50 L 70 70 L 90 70" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+           <circle cx="100" cy="30" r="3" fill="currentColor" />
+           <circle cx="90" cy="70" r="3" fill="currentColor" />
         </svg>
-        <svg className="absolute -right-8 -top-8 w-16 h-16 overflow-visible z-30" viewBox="0 0 50 50">
-           <path d="M 0 30 L 15 10 L 30 40 L 45 0" fill="none" stroke="#111827" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <svg className="absolute -right-12 -top-12 w-24 h-24 overflow-visible z-30 opacity-40 text-gray-500" viewBox="0 0 100 100" fill="none">
+           <rect x="10" y="10" width="80" height="80" rx="6" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" />
+           <circle cx="50" cy="50" r="16" stroke="currentColor" strokeWidth="1.5" />
+           <path d="M 50 10 L 50 90 M 10 50 L 90 50" stroke="currentColor" strokeWidth="1" opacity="0.5" />
         </svg>
-        <svg className="absolute -right-16 bottom-0 w-12 h-12 overflow-visible z-30" viewBox="0 0 50 50">
-           <path d="M 25 25 C 20 20, 10 30, 20 40 C 35 45, 45 30, 35 15 C 20 -5, -5 20, 10 45" fill="none" stroke="#111827" strokeWidth="2.5" strokeLinecap="round" />
+        <svg className="absolute -right-16 bottom-4 w-20 h-20 overflow-visible z-30 opacity-40 text-gray-500" viewBox="0 0 100 100" fill="none">
+           <path d="M 10 10 L 90 10 L 90 90 L 10 90 Z" stroke="currentColor" strokeWidth="1" strokeDasharray="3 6" />
+           <circle cx="10" cy="10" r="2" fill="currentColor" />
+           <circle cx="90" cy="10" r="2" fill="currentColor" />
+           <circle cx="90" cy="90" r="2" fill="currentColor" />
+           <circle cx="10" cy="90" r="2" fill="currentColor" />
+           <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" strokeWidth="1" strokeDasharray="1 5" />
         </svg>
         
       </div>

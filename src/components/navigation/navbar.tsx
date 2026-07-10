@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap, ChevronDown, User, LifeBuoy, LogOut, LayoutDashboard } from "lucide-react";
+import { Menu, X, ChevronDown, LifeBuoy, LogOut, LayoutDashboard } from "lucide-react";
 import { mainNav, toolNav } from "@/lib/constants/navigation";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile-menu";
@@ -59,7 +59,7 @@ export function Navbar() {
               <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <img src="/Untitled_design-removebg-preview.png" alt="ToolStack Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">
+              <span className="font-display font-bold text-xl tracking-tight text-gray-900">
                 ToolStack
               </span>
             </Link>
@@ -157,14 +157,14 @@ export function Navbar() {
       </motion.header>
 
       <AnimatePresence>
-        {mobileOpen && (
-          <MobileMenu
-            onClose={() => setMobileOpen(false)}
-            mainNav={mainNav}
-            toolNav={toolNav}
-          />
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
+          {mobileOpen && (
+            <MobileMenu
+              onClose={() => setMobileOpen(false)}
+              mainNav={mainNav}
+              toolNav={toolNav}
+            />
+          )}
+        </AnimatePresence>
+      </>
+    );
+  }

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mic, GraduationCap, Video, Mail, CreditCard, UserPlus, Layers, ShieldCheck, Activity, TrendingUp } from "lucide-react";
+import { Mic, GraduationCap, Video, Mail, CreditCard, Settings, Sparkles } from "lucide-react";
 
 export function Ecosystem() {
   return (
@@ -74,8 +74,16 @@ export function Ecosystem() {
               }}
               className="w-12 h-12 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#5EEAD4] p-0.5 shadow-md flex items-center justify-center z-10"
             >
-              <div className="w-full h-full rounded-full bg-[#FAF9F5] flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="w-6 h-6 text-[#8B5CF6]">
+              <div className="w-full h-full rounded-full bg-[#FAF9F5] flex items-center justify-center relative">
+                {/* Rotating gear backing */}
+                <motion.div
+                  className="absolute inset-0.5 text-[#8B5CF6]/20"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                >
+                  <Settings className="w-full h-full stroke-[1.2]" />
+                </motion.div>
+                <svg viewBox="0 0 100 100" className="w-6 h-6 text-[#8B5CF6] relative z-10">
                   <path
                     d="M 50 0 C 50 35, 65 50, 100 50 C 65 50, 50 65, 50 100 C 50 65, 35 50, 0 50 C 35 50, 50 35, 50 0 Z"
                     fill="currentColor"
@@ -106,7 +114,7 @@ export function Ecosystem() {
             </span>
           </div>
         </div>
-        <h3 className="text-[2rem] md:text-[2.5rem] font-serif text-[#1F2937] leading-[1.2] max-w-[500px]">
+        <h3 className="text-[2rem] md:text-[2.5rem] font-serif text-[#1F2937] leading-[1.2] max-w-[500px]">
           Profit Agentz replaces fragmentation <br />
           with a single business system.
         </h3>
@@ -123,7 +131,7 @@ export function Ecosystem() {
               <div className="relative w-full max-w-[320px] bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 text-white z-10 hover:border-[#8B5CF6]/50 transition-all duration-300 transform hover:scale-[1.02] cursor-default">
                 <div className="flex justify-between items-center mb-1">
                   <span className="text-[10px] uppercase font-bold tracking-wider text-purple-400 bg-purple-500/10 px-2 py-1 rounded">AI Core</span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-50 animate-pulse" />
                 </div>
                 
                 <div className="flex flex-col gap-1.5">
@@ -137,7 +145,10 @@ export function Ecosystem() {
                   <label className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Password</label>
                   <div className="w-full h-9 bg-slate-800/80 border border-slate-700/80 rounded-lg px-3 flex items-center justify-between text-xs text-slate-300 font-mono">
                     <span>••••••••••••</span>
-                    <span className="text-purple-400 text-[10px] font-bold">Secure</span>
+                    <span className="text-purple-400 text-[10px] font-bold flex items-center gap-1">
+                      <Settings className="w-3 h-3 animate-spin [animation-duration:10s]" />
+                      Secure
+                    </span>
                   </div>
                 </div>
 
@@ -457,26 +468,26 @@ export function Ecosystem() {
               <div className="absolute inset-0 bg-blue-600/15 rounded-full blur-3xl" />
               
               <div className="relative w-full max-w-[320px] bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-5 shadow-2xl flex flex-col gap-4 text-white z-10 hover:border-[#3B82F6]/50 transition-all duration-300 transform hover:scale-[1.02] cursor-default">
-                <div className="flex justify-between items-center border-b border-slate-800 pb-3">
-                   <div className="flex items-center gap-1.5">
-                     <span className="w-2 h-2 rounded-full bg-red-500/80" />
-                     <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
-                     <span className="w-2 h-2 rounded-full bg-green-500/80" />
-                   </div>
-                   <span className="text-[10px] text-slate-400 font-mono">ai-terminal.js</span>
-                </div>
-                <div className="flex flex-col gap-2 font-mono text-[9px] text-slate-300 bg-slate-950/80 rounded-xl p-3.5 border border-slate-800/80 leading-relaxed">
-                  <div className="flex gap-1.5 text-slate-400">
-                    <span>&gt;</span>
-                    <span>initiate_ai_model()</span>
+                 <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                      <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
+                      <span className="w-2 h-2 rounded-full bg-green-500/80" />
+                    </div>
+                    <span className="text-[10px] text-slate-400 font-mono">ai-terminal.js</span>
+                 </div>
+                 <div className="flex flex-col gap-2 font-mono text-[9px] text-slate-300 bg-slate-950/80 rounded-xl p-3.5 border border-slate-800/80 leading-relaxed">
+                    <div className="flex gap-1.5 text-slate-400">
+                      <span>&gt;</span>
+                      <span>initiate_ai_model()</span>
+                    </div>
+                    <div className="text-cyan-400">✓ Model Loaded: Gemini-Flash</div>
+                   <div className="text-emerald-400">✓ Optimization workflow compiled</div>
+                    <div className="flex items-center gap-1.5 mt-1">
+                      <Settings className="w-3.5 h-3.5 text-blue-400 animate-spin [animation-duration:4s]" />
+                      <span className="text-blue-400 font-semibold">Running tasks...</span>
+                    </div>
                   </div>
-                  <div className="text-cyan-400">✓ Model Loaded: Gemini-Flash</div>
-                  <div className="text-emerald-400">✓ Optimization workflow compiled</div>
-                  <div className="flex items-center gap-1.5 mt-1">
-                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                    <span className="text-blue-400 font-semibold">Running tasks...</span>
-                  </div>
-                </div>
               </div>
            </div>
         </div>

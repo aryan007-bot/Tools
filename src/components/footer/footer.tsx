@@ -97,7 +97,7 @@ export function Footer() {
       {/* Massive Logo */}
       <div className="w-full flex justify-center items-end pointer-events-none select-none z-0 overflow-hidden leading-none h-[40vh] md:h-[60vh] max-h-[500px]">
         <h1 
-          className="font-serif font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-[#8B5CF6]/40 to-transparent whitespace-nowrap leading-[0.75]"
+          className="font-serif font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-[#3B82F6]/40 to-transparent whitespace-nowrap leading-[0.75]"
           style={{ fontSize: "clamp(8rem, 25vw, 40rem)", marginBottom: "-5%" }}
         >
           ToolStack

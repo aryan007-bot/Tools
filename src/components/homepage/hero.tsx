@@ -5,17 +5,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useMouseParallax } from "@/hooks/use-parallax";
-
-const HERO_IMAGES = [
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23c6723eadc91210ade_6d965782e0ccedbe7d7bd322d202488d_hero-load-04.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23c04412d3f16007b22_f28274dae9c94f66d31e483913bb79d4_hero-load-07.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23c4fc089b2812b9d5c_62ddd7be268edacfe9c9dc778fecafe6_hero-load-05.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23cab969012e24ba09f_c04b802c31239400042e400a54d04909_hero-load-01.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23c78d0b447681dd9f5_hero-load-08.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23cf317e2c1522cced9_8641f04d89cd55c8eebf8497f27a1aa3_hero-load-02.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23cc0f89e21b0fe7c98_795e9025f45162bfde189191421814cf_hero-load-06.avif",
-  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/6939a23c4a9e3e28661c0ceb_38a07b3bf64cc9acf342df9a33b937e4_hero-load-03.avif",
-];
+import { 
+  Settings, Sparkles, Mic, GraduationCap, Video, 
+  Mail, CreditCard, Cpu, TrendingUp 
+} from "lucide-react";
 
 // Orbit geometry
 const ORBIT_RADIUS_PCT = 38; // distance from center, as a % of the orbit box
@@ -29,11 +22,108 @@ function getOrbitPosition(index: number, total: number) {
   };
 }
 
+const HERO_WIDGETS = [
+  {
+    title: "Voice to Excel",
+    color: "border-purple-200/50 hover:border-purple-400/50 hover:shadow-purple-500/5",
+    bg: "bg-gradient-to-br from-purple-50 to-indigo-50/50",
+    icon: (
+      <div className="flex flex-col gap-1 w-full h-full items-center justify-center rotate-[-12deg] text-purple-600">
+        <Mic className="w-5 h-5 mb-0.5" />
+        <div className="w-8 h-1 bg-purple-200 rounded-full" />
+        <div className="w-5 h-1 bg-purple-200 rounded-full" />
+      </div>
+    )
+  },
+  {
+    title: "Test Generator",
+    color: "border-emerald-200/50 hover:border-emerald-400/50 hover:shadow-emerald-500/5",
+    bg: "bg-gradient-to-br from-emerald-50 to-teal-50/50",
+    icon: (
+      <div className="flex flex-col gap-1 w-full h-full items-center justify-center rotate-[-12deg] text-emerald-600">
+        <GraduationCap className="w-5 h-5 mb-0.5" />
+        <div className="flex gap-1">
+          <div className="w-2.5 h-2.5 rounded-sm border border-emerald-300 flex items-center justify-center text-[6px] font-black">✓</div>
+          <div className="w-2.5 h-2.5 rounded-sm border border-emerald-300" />
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Video Editor",
+    color: "border-amber-200/50 hover:border-amber-400/50 hover:shadow-amber-500/5",
+    bg: "bg-gradient-to-br from-amber-50 to-orange-50/50",
+    icon: (
+      <div className="flex flex-col gap-1 w-full h-full items-center justify-center rotate-[-12deg] text-amber-600">
+        <Video className="w-5 h-5 mb-0.5" />
+        <div className="w-10 bg-amber-100 h-1.5 rounded-full overflow-hidden">
+          <div className="w-2/3 h-full bg-amber-500 rounded-full" />
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Email Assistant",
+    color: "border-blue-200/50 hover:border-blue-400/50 hover:shadow-blue-500/5",
+    bg: "bg-gradient-to-br from-blue-50 to-cyan-50/50",
+    icon: (
+      <div className="flex flex-col gap-1.5 w-full h-full items-center justify-center rotate-[-12deg] text-blue-600">
+        <Mail className="w-5 h-5" />
+        <span className="text-[7px] font-black bg-blue-100 px-1 py-0.5 rounded text-blue-700">Draft</span>
+      </div>
+    )
+  },
+  {
+    title: "Fee Collection",
+    color: "border-rose-200/50 hover:border-rose-400/50 hover:shadow-rose-500/5",
+    bg: "bg-gradient-to-br from-rose-50 to-red-50/50",
+    icon: (
+      <div className="flex flex-col gap-1 w-full h-full items-center justify-center rotate-[-12deg] text-rose-600">
+        <CreditCard className="w-5 h-5 mb-0.5" />
+        <span className="text-[7.5px] font-bold font-mono text-emerald-600">$ due</span>
+      </div>
+    )
+  },
+  {
+    title: "AI Core",
+    color: "border-purple-200/50 hover:border-purple-400/50 hover:shadow-purple-500/5",
+    bg: "bg-gradient-to-br from-violet-50 to-fuchsia-50/50",
+    icon: (
+      <div className="flex flex-col gap-0.5 w-full h-full items-center justify-center rotate-[-12deg] text-purple-600">
+        <Cpu className="w-5 h-5 mb-0.5 animate-pulse" />
+        <div className="text-[7px] font-extrabold uppercase tracking-wider text-[#EC4899]">AI Core</div>
+      </div>
+    )
+  },
+  {
+    title: "Analytics",
+    color: "border-emerald-200/50 hover:border-emerald-400/50 hover:shadow-emerald-500/5",
+    bg: "bg-gradient-to-br from-emerald-50 to-cyan-50/50",
+    icon: (
+      <div className="flex flex-col gap-1 w-full h-full items-center justify-center rotate-[-12deg] text-emerald-600">
+        <TrendingUp className="w-5 h-5 mb-0.5" />
+        <span className="text-[7px] font-extrabold text-emerald-600">+14.2%</span>
+      </div>
+    )
+  },
+  {
+    title: "System Config",
+    color: "border-slate-200/50 hover:border-slate-400/50 hover:shadow-slate-500/5",
+    bg: "bg-gradient-to-br from-slate-50 to-gray-50/50",
+    icon: (
+      <div className="flex flex-col gap-1 w-full h-full items-center justify-center rotate-[-12deg] text-slate-600">
+        <Settings className="w-5 h-5 mb-0.5 animate-spin [animation-duration:10s]" />
+        <div className="w-8 h-1 bg-slate-200 rounded-full" />
+      </div>
+    )
+  }
+];
+
 export function Hero() {
   const mouse = useMouseParallax(0.03);
 
   const positions = useMemo(
-    () => HERO_IMAGES.map((_, i) => getOrbitPosition(i, HERO_IMAGES.length)),
+    () => HERO_WIDGETS.map((_, i) => getOrbitPosition(i, HERO_WIDGETS.length)),
     []
   );
 
@@ -43,6 +133,72 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
         <div className="absolute top-1/3 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-200/10 to-cyan-200/10 rounded-full blur-3xl" />
+        
+        {/* Floating tech nodes / gears */}
+        <motion.div
+          className="absolute left-[8%] top-[18%] text-[#A78BFA]/10 w-24 h-24"
+          animate={{
+            rotate: 360,
+            y: [0, -10, 0]
+          }}
+          transition={{
+            rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          }}
+        >
+          <Settings className="w-full h-full stroke-[1.2]" />
+        </motion.div>
+
+        <motion.div
+          className="absolute right-[5%] bottom-[12%] text-[#5EEAD4]/10 w-28 h-28"
+          animate={{
+            rotate: -360,
+            y: [0, 12, 0]
+          }}
+          transition={{
+            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+            y: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+          }}
+        >
+          <Settings className="w-full h-full stroke-[1]" />
+        </motion.div>
+
+        <motion.div
+          className="absolute left-[45%] top-[12%] text-[#FBBF24]/10 w-12 h-12"
+          animate={{
+            rotate: 360,
+            y: [0, 8, 0]
+          }}
+          transition={{
+            rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+          }}
+        >
+          <Settings className="w-full h-full stroke-[1.5]" />
+        </motion.div>
+
+        {/* Floating Sparkles for AI feeling */}
+        <motion.div
+          className="absolute left-[38%] top-[35%] text-[#B4A5FF]/30"
+          animate={{
+            scale: [0.8, 1.2, 0.8],
+            opacity: [0.3, 0.7, 0.3],
+          }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Sparkles className="w-8 h-8" />
+        </motion.div>
+
+        <motion.div
+          className="absolute right-[42%] bottom-[20%] text-[#5EEAD4]/30"
+          animate={{
+            scale: [1.1, 0.8, 1.1],
+            opacity: [0.4, 0.8, 0.4],
+          }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        >
+          <Sparkles className="w-6 h-6" />
+        </motion.div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full z-10">
@@ -55,7 +211,6 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-           
             </motion.div>
 
             <motion.h1
@@ -119,7 +274,7 @@ export function Hero() {
               style={{ transform: `translate(${mouse.x}px, ${mouse.y}px)` }}
               transition={{ type: "spring", stiffness: 50 }}
             >
-              {/* Rotating ring of fashion models */}
+              {/* Rotating ring of SaaS widgets */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{
@@ -129,7 +284,7 @@ export function Hero() {
                 }}
                 className="absolute inset-0 origin-center"
               >
-                {HERO_IMAGES.map((imgUrl, i) => {
+                {HERO_WIDGETS.map((widget, i) => {
                   const pos = positions[i];
                   return (
                     <div
@@ -162,17 +317,9 @@ export function Hero() {
                         >
                           <motion.div
                             whileHover={{ scale: 1.12 }}
-                            className="w-full h-full rounded-[1.8rem] sm:rounded-[2.2rem] overflow-hidden bg-white border border-gray-100 shadow-[0_8px_32px_rgba(0,0,0,0.06)] cursor-pointer rotate-[12deg] transition-all duration-300 relative group"
+                            className={`w-full h-full rounded-[1.8rem] sm:rounded-[2.2rem] overflow-hidden border ${widget.color} ${widget.bg} shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all duration-300 relative group flex items-center justify-center p-3`}
                           >
-                            <Image
-                              src={imgUrl}
-                              alt={`Model ${i + 1}`}
-                              fill
-                              sizes="(max-width: 640px) 76px, 98px"
-                              className="object-cover scale-[1.3] rotate-[-12deg] transition-transform duration-500 group-hover:scale-[1.4]"
-                              priority={i < 2}
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                            {widget.icon}
                           </motion.div>
                         </motion.div>
                       </motion.div>
