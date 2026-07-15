@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, Lora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navigation/navbar";
 import { Footer } from "@/components/footer/footer";
+import { PageTransition } from "@/components/layout/page-transition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,10 +53,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${lora.variable}`}>
-      <body className="font-sans antialiased overflow-x-hidden">
+      <body className="font-sans antialiased overflow-x-hidden noise-subtle">
         <AuthProvider>
           <Navbar />
-          <main className="relative">{children}</main>
+          <main className="relative">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </AuthProvider>
       </body>

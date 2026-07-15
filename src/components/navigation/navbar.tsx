@@ -2,12 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, LifeBuoy, LogOut, LayoutDashboard } from "lucide-react";
 import { mainNav, toolNav } from "@/lib/constants/navigation";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile-menu";
 import { useAuth } from "@/hooks/use-auth";
+import { MagneticButton } from "../animations/magnetic-button";
+import { useReducedMotion, transitions } from "../animations/motion-config";
 
 export function Navbar() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -15,6 +18,8 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const reduced = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -48,7 +53,7 @@ export function Navbar() {
             className={cn(
               "flex items-center justify-between rounded-2xl transition-all duration-500 px-6",
               scrolled
-                ? "bg-white/80 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-gray-200/50 py-3"
+                ? "bg-white/70 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.06)] border border-gray-200/50 py-3"
                 : "bg-transparent py-3"
             )}
           >
@@ -56,24 +61,42 @@ export function Navbar() {
               href="/"
               className="flex items-center gap-2.5 group"
             >
-              <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <motion.div 
+                className="w-10 h-10 flex items-center justify-center"
+                animate={reduced ? {} : { scale: [1, 1.025, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                whileHover={{ scale: 1.08 }}
+              >
                 <img src="/Untitled_design-removebg-preview.png" alt="ToolStack Logo" className="w-full h-full object-contain" />
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight text-gray-900">
+              </motion.div>
+              <span className="font-display font-bold text-xl tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                 ToolStack
               </span>
             </Link>
 
             <div className="hidden md:flex items-center gap-1">
-              {mainNav.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100/80 transition-all duration-200"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {mainNav.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={cn(
+                      "relative px-4 py-2 text-sm font-semibold transition-colors duration-300 rounded-lg",
+                      isActive ? "text-blue-600" : "text-gray-600 hover:text-gray-900 hover:bg-gray-100/60"
+                    )}
+                  >
+                    {item.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeNavLink"
+                        className="absolute bottom-0 left-4 right-4 h-[2px] bg-blue-600 rounded-full"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="hidden md:flex items-center gap-3">
@@ -89,16 +112,16 @@ export function Navbar() {
                     <span className="text-sm font-medium text-gray-700 max-w-[120px] truncate">
                       {user.full_name || user.email}
                     </span>
-                    <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
                   </button>
 
                   <AnimatePresence>
                     {dropdownOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: -8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.15 }}
+                        initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                         className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-200 py-2 overflow-hidden"
                       >
                         <div className="px-4 py-3 border-b border-gray-100">
@@ -136,12 +159,14 @@ export function Navbar() {
                   </AnimatePresence>
                 </div>
               ) : (
-                <Link
-                  href="/login"
-                  className="px-5 py-2.5 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-200 hover:shadow-lg hover:shadow-gray-900/20"
-                >
-                  Get Started
-                </Link>
+                <MagneticButton strength={0.2} href="/login">
+                  <motion.div
+                    className="px-5 py-2.5 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-black transition-colors duration-300 shadow-md shadow-gray-900/10 cursor-pointer text-center"
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    Get Started
+                  </motion.div>
+                </MagneticButton>
               )}
             </div>
 
@@ -157,14 +182,14 @@ export function Navbar() {
       </motion.header>
 
       <AnimatePresence>
-          {mobileOpen && (
-            <MobileMenu
-              onClose={() => setMobileOpen(false)}
-              mainNav={mainNav}
-              toolNav={toolNav}
-            />
-          )}
-        </AnimatePresence>
-      </>
-    );
-  }
+        {mobileOpen && (
+          <MobileMenu
+            onClose={() => setMobileOpen(false)}
+            mainNav={mainNav}
+            toolNav={toolNav}
+          />
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

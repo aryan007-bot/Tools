@@ -68,46 +68,149 @@ export function AboutContent() {
   const currentMember = team[currentIdx];
 
   return (
-    <div className="bg-[#FAF9F5] text-gray-900 font-sans antialiased selection:bg-purple-500/30 selection:text-gray-900 min-h-screen pt-20 relative overflow-hidden">
+    <div className="bg-[#fafafa] text-gray-900 font-sans antialiased selection:bg-purple-500/30 selection:text-gray-900 min-h-screen pt-20 relative overflow-hidden">
       {/* Background blurry blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
         <div className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-200/10 to-cyan-200/10 rounded-full blur-3xl" />
       </div>
 
+      {/* Floating Animated Developer Utility Nodes */}
+      {/* 1. Rotating Gear (Settings) */}
+      <motion.div
+        className="absolute top-[22%] left-[6%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          >
+            ⚙️
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">ENGINE</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Gear_Core
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 2. Swinging Hammer (Hammer) */}
+      <motion.div
+        className="absolute top-[30%] right-[6%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ rotate: [0, -30, 15, 0] }}
+            transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut", repeatDelay: 1 }}
+          >
+            🔨
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">COMPILER</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Build_Node
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 3. Turning Wrench (Wrench) */}
+      <motion.div
+        className="absolute top-[62%] left-[8%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ rotate: [0, 25, -25, 0] }}
+            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+          >
+            🔧
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">SYS_CONFIG</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Setup_Node
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 4. Bouncing Toolbox (Briefcase) */}
+      <motion.div
+        className="absolute bottom-[14%] right-[8%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ repeat: Infinity, duration: 4.8, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ scale: [1, 1.03, 0.97, 1] }}
+            transition={{ repeat: Infinity, duration: 3.5 }}
+          >
+            🧰
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">STACK_CORE</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Toolbox_Live
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
       {/* 1. Hero Section */}
       <section className="mx-auto mb-12 flex max-w-6xl flex-col items-center px-6 pt-4 text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex max-w-5xl flex-col items-center"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="flex max-w-[680px] flex-col items-center"
         >
-          <h1 className="mb-8 select-none text-center text-[2.75rem] font-medium leading-[1.4] tracking-tight text-gray-900 sm:text-[4.5rem] md:text-[5.5rem] font-serif">
-            Engineering{" "}
-            <span className="relative inline-block mx-1">
-              <svg className="absolute inset-0 w-full h-full text-[#B4A5FF] scale-110" preserveAspectRatio="none" viewBox="0 0 100 100" fill="currentColor">
-                 <path d="M5,5 L95,2 L98,95 L2,98 Z" opacity="0.8" />
-              </svg>
-              <span className="relative z-10 px-4 text-gray-900 font-serif">Growth</span>
-            </span>{" "}
-            Through{" "}
-            <span className="inline-block bg-[#5EEAD4] px-4 rounded-md mx-1 transform -translate-y-1 text-gray-900 font-serif">
-              AI
-            </span>
+          <h1 className="text-4xl sm:text-6xl md:text-[4.6rem] font-medium tracking-tight text-[#0c1a30] leading-[1.1] mb-8 font-sans">
+            Engineering growth through AI
           </h1>
-          <p className="mb-10 max-w-2xl text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed font-sans font-normal">
-            From classroom to global scale, we build tools that connect instruction, 
-            assessment, and intervention. Measurable impact is the only metric that matters.
+          <p className="text-base sm:text-lg md:text-[1.15rem] max-w-[540px] mx-auto mb-10 text-gray-500 leading-relaxed">
+            Unifying your daily business operations. We build clean, high-performance utility nodes
+            to automate voice transcription, document assessment, client communication, and payments.
           </p>
           
-          <button
-            onClick={() => document.getElementById("hello-section")?.scrollIntoView({ behavior: "smooth" })}
-            className="group flex cursor-pointer select-none items-center gap-2 rounded-full bg-gray-900 px-7 py-3 text-xs font-bold text-white shadow-md transition-all duration-300 hover:bg-black font-sans"
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-3 items-center justify-center"
           >
-            View Process
-            <span className="transition-transform duration-300 group-hover:translate-y-1">↓</span>
-          </button>
+            <button
+              onClick={() => document.getElementById("hello-section")?.scrollIntoView({ behavior: "smooth" })}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#2563EB] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:bg-[#1D4ED8] hover:scale-105 shadow-md shadow-blue-500/10"
+            >
+              View Process ↓
+            </button>
+            <a
+              href="/tools"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent border border-gray-300 text-gray-700 text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:border-gray-900"
+            >
+              Explore all tools
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Endless text marquee banner */}
@@ -132,20 +235,24 @@ export function AboutContent() {
             <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-[#8B5CF6]">Our Mission</span>
           </div>
         </div>
-        <h2 className="mb-12 max-w-3xl text-2xl font-medium leading-snug tracking-tight text-gray-900 sm:text-3xl md:text-4xl font-serif">
-          To empower educators and administrators with autonomous systems that eliminate repetitive labor, unlock student insights, and connect intervention 24/7.
+        <h2 className="mb-12 max-w-3xl text-2xl font-medium leading-[1.1] tracking-tight text-[#0c1a30] sm:text-3xl md:text-4xl font-sans">
+          To eliminate software bloat and app fatigue by consolidation: providing a single, unified workspace for critical business utilities with zero-latency execution.
         </h2>
         <div className="flex max-w-xl flex-wrap justify-center gap-x-6 gap-y-4">
-          {["Classroom Automation", "Bespoke AI Assistants", "FERPA & COPPA Compliant", "Outcome-Driven"].map((tag) => (
-            <span key={tag} className="cursor-default select-none font-sans text-xs font-bold uppercase tracking-[0.15em] text-slate-800 border-b-2 border-slate-900 pb-1.5 px-1 hover:text-[#8B5CF6] hover:border-[#8B5CF6] transition-all duration-300">
+          {["Unified Workspace", "Voice Transcriptions", "Automated Assessments", "Secure Invoicing", "AI Mail Drafting"].map((tag) => (
+            <motion.span 
+              key={tag} 
+              whileHover={{ y: -3, scale: 1.05 }}
+              className="cursor-default select-none font-sans text-xs font-bold uppercase tracking-[0.15em] text-slate-800 border-b-2 border-slate-900 pb-1.5 px-1 hover:text-[#8B5CF6] hover:border-[#8B5CF6] transition-all duration-300"
+            >
               {tag}
-            </span>
+            </motion.span>
           ))}
         </div>
       </section>
 
       {/* 3. Interactive Founder/Team Slider Section */}
-      <section className="relative flex w-full flex-col items-center overflow-hidden border-t border-gray-200 bg-[#FAF9F5] py-12 sm:py-16">
+      <section className="relative flex w-full flex-col items-center overflow-hidden border-t border-gray-200 bg-[#fafafa] py-12 sm:py-16">
         {/* Glow */}
         <div className="pointer-events-none absolute left-1/4 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[100px]" />
         
@@ -194,29 +301,40 @@ export function AboutContent() {
 
             {/* Right - Profile Description copy */}
             <div className="flex flex-col justify-center space-y-4 lg:col-span-6 text-center lg:text-left relative z-10">
-              <div className="space-y-3">
-                <div className="flex items-center justify-center lg:justify-start gap-2 mb-1 select-none">
-                  <span className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[#8B5CF6]">Intro</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-pulse" />
-                </div>
-                <h3 className="select-none font-medium text-gray-900 text-3xl sm:text-4xl lg:text-[2.5rem] tracking-tight font-serif">
-                  Meet the Team
-                </h3>
-                <h4 className="font-sans bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-xl font-bold tracking-tight text-transparent">
-                  {currentMember.name}
-                </h4>
-                <p className="min-h-[120px] sm:min-h-[100px] text-sm leading-relaxed text-gray-600 sm:text-base font-sans font-normal">
-                  {currentMember.description}
-                </p>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIdx}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="space-y-4"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-center lg:justify-start gap-2 mb-1 select-none">
+                      <span className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[#8B5CF6]">Intro</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-pulse" />
+                    </div>
+                    <h3 className="select-none font-medium text-[#0c1a30] text-3xl sm:text-4xl lg:text-[2.5rem] tracking-tight leading-[1.1] font-sans">
+                      Meet the Team
+                    </h3>
+                    <h4 className="font-sans bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-xl font-bold tracking-tight text-transparent">
+                      {currentMember.name}
+                    </h4>
+                    <p className="min-h-[120px] sm:min-h-[100px] text-sm leading-relaxed text-gray-600 sm:text-base font-sans font-normal">
+                      {currentMember.description}
+                    </p>
+                  </div>
 
-              <div className="font-sans space-y-4 border-t border-gray-200 pt-4">
-                <div className="flex items-center justify-center lg:justify-start border-b border-gray-100 py-1 pb-3 text-sm">
-                  <span className="font-semibold text-gray-900">
-                    {currentMember.role} <span className="font-normal text-gray-400">at</span> <span className="text-purple-600">{currentMember.company}</span>
-                  </span>
-                </div>
-              </div>
+                  <div className="font-sans space-y-4 border-t border-gray-200 pt-4">
+                    <div className="flex items-center justify-center lg:justify-start border-b border-gray-100 py-1 pb-3 text-sm">
+                      <span className="font-semibold text-gray-900">
+                        {currentMember.role} <span className="font-normal text-gray-400">at</span> <span className="text-purple-600">{currentMember.company}</span>
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
               {/* Slider Toggles */}
               <div className="flex select-none items-center justify-center lg:justify-start gap-6 pt-4">

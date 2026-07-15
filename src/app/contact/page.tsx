@@ -20,46 +20,142 @@ export default function ContactPage() {
   const faqData = [
     {
       id: 1,
-      question: "Why choose ToolStack over hiring in-house developers?",
-      answer: "Hiring full-time developers is slow, expensive, and risky. With ToolStack, you get a full team of elite software engineers, designers, and project managers ready to deploy custom software in days, not months—at a fraction of the cost of a single in-house hire."
+      question: "What is ToolStack and how does it help my business?",
+      answer: "ToolStack is a unified SaaS platform featuring utility tools like Voice to Excel, Test Generator, Fee Collection, and Email Assistant. It replaces separate, expensive subscriptions with a single high-performance workspace."
     },
     {
       id: 2,
-      question: "How fast can you deploy an AI agent?",
-      answer: "Basic AI assistants and workflows can be deployed in as little as 3 to 7 days. For fully custom enterprise software and deep integrations, our development cycles typically range from 2 to 4 weeks."
+      question: "How accurate is the Voice to Excel transcription?",
+      answer: "Our dictation engine features 95%+ speech-to-text accuracy with active noise cancellation and smart categorization, automatically parsing dates, quantities, and SKUs directly into structured Excel columns."
     },
     {
       id: 3,
-      question: "What is your development process like?",
-      answer: "We follow a structured, speed-focused process: first, we audit your manual bottlenecks; second, we draft a custom architecture; third, we build and test the software; and finally, we deploy and optimize for token costs and security."
+      question: "Is my data secure and isolated?",
+      answer: "Yes, security is our top priority. All tools run on isolated sandbox environments. We strictly respect your data privacy, and none of your business data or voice recordings are used to train public models."
     },
     {
       id: 4,
-      question: "Do you build custom software or just use templates?",
-      answer: "We build fully custom, proprietary software tailored specifically to your business operations. While we leverage optimized pre-built modules for standard functions to save you time and cost, every client receives a unique codebase they own completely."
+      question: "Can I connect ToolStack to Google Sheets or CRMs?",
+      answer: "Yes. On our Premium and Enterprise tiers, we support API integrations and webhooks to sync your Voice to Excel transcriptions directly to Google Sheets, Salesforce, HubSpot, or other internal tools."
     },
     {
       id: 5,
-      question: "How do we get started on a project?",
-      answer: "Simply fill out our contact form or send an email to contact@toolstack.com. We will schedule a brief 15-minute discovery call to understand your operational bottlenecks and provide a fixed-price proposal within 24 hours."
-    },
-    {
-      id: 6,
-      question: "Are your AI systems secure and compliant?",
-      answer: "Yes, security is our top priority. We build using isolated enterprise-grade cloud environments, fully compliant with SOC 2 and HIPAA standards. Your proprietary business data is never used to train public LLM models."
+      question: "How do I upgrade or cancel my plan?",
+      answer: "You can change your billing settings anytime directly in your customer dashboard, switching between monthly and yearly billing modes instantly."
     }
   ];
 
   return (
-    <div className="pt-20 bg-[#FAF9F5] min-h-screen relative overflow-hidden">
+    <div className="pt-20 bg-[#fafafa] min-h-screen relative overflow-hidden">
       {/* Background blurry blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-gradient-to-br from-violet-200/20 to-pink-200/20 rounded-full blur-3xl" />
         <div className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-br from-emerald-200/10 to-cyan-200/10 rounded-full blur-3xl" />
       </div>
 
+      {/* Floating Animated Developer Utility Nodes */}
+      {/* 1. Floating Magnet */}
+      <motion.div
+        className="absolute top-[28%] right-[8%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ x: [0, 3, -3, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            🧲
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">DB_PULL</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Magnet_Sync
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f97316] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 2. Spin-drill Bolt (Cpu) */}
+      <motion.div
+        className="absolute top-[50%] left-[8%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+          >
+            🔩
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">IO_STREAM</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Bolt_Thread
+              <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 3. Crossed Tools (Hammer) */}
+      <motion.div
+        className="absolute bottom-[20%] left-[8%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+          >
+            🛠️
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">DEV_UTILITY</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Utility_Core
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* 4. Rotating Gear (Settings) */}
+      <motion.div
+        className="absolute bottom-[15%] right-[8%] z-20 cursor-pointer select-none hidden lg:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="flex items-center gap-3 p-2 bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-gray-300 transition-all duration-300">
+          <motion.div 
+            className="w-8 h-8 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-base select-none"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          >
+            ⚙️
+          </motion.div>
+          <div className="flex flex-col text-left pr-2">
+            <span className="text-[8px] font-black text-gray-400 font-mono leading-none tracking-wider">ENGINE</span>
+            <span className="text-[11px] font-bold text-gray-800 mt-1 flex items-center gap-1">
+              Gear_Core
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Contact Section */}
-      <section id="contact" className="relative overflow-hidden bg-[#FAF9F5] pt-4 pb-0 z-10">
+      <section id="contact" className="relative overflow-hidden bg-[#fafafa] pt-4 pb-0 z-10">
         {/* Large back heading */}
         <div className="relative text-center overflow-hidden select-none mb-[-15px] sm:mb-[-30px] pointer-events-none">
           <h2 className="font-serif leading-none tracking-tight text-gray-900/5 whitespace-nowrap text-[4.5rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem]">
@@ -93,10 +189,10 @@ export default function ContactPage() {
                   className="text-gray-900 font-medium mb-3 text-3xl sm:text-4xl lg:text-[3rem] xl:text-[3.5rem] tracking-tight font-serif"
                   style={{ lineHeight: "1.15" }}
                 >
-                  Ready to build something that pays?
+                  Have questions about ToolStack?
                 </h3>
                 <p className="text-gray-500 font-normal text-[15px] font-sans">
-                  Tell us about your software requirements
+                  Send us a message and we will respond within 24 hours
                 </p>
               </div>
             </div>
@@ -127,7 +223,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[11px] font-bold text-gray-700 uppercase tracking-wider block">Describe your bottlenecks / goals</label>
+                  <label className="text-[11px] font-bold text-gray-700 uppercase tracking-wider block">Describe your requirements or questions</label>
                   <textarea
                     required
                     rows={3}
@@ -139,13 +235,15 @@ export default function ContactPage() {
                 </div>
 
                 <div className="pt-4">
-                  <button
+                  <motion.button
+                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: 1.01 }}
                     type="submit"
                     className="group flex w-full cursor-pointer select-none items-center justify-center gap-2 rounded-full bg-gray-950 py-4 text-xs font-bold uppercase tracking-widest text-white border border-white/5 shadow-[0_4px_20px_rgba(139,92,246,0.15)] transition-all duration-300 hover:bg-black hover:shadow-[0_4px_32px_rgba(139,92,246,0.3)]"
                   >
                     {submitted ? "Sent Successfully!" : "Send Now!"}
                     <span className="transition-transform duration-300 group-hover:translate-x-1 font-sans">→</span>
-                  </button>
+                  </motion.button>
                 </div>
               </form>
             </div>
@@ -172,7 +270,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative overflow-hidden bg-[#FAF9F5] py-24 z-10">
+      <section className="relative overflow-hidden bg-[#fafafa] py-24 z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <p className="text-center text-gray-500 mb-3 text-[11px] tracking-wider font-bold uppercase font-sans">FAQs</p>
           <div className="text-center mb-4">
